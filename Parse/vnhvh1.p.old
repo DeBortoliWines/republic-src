@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***************************************************************************
+** Program:      dbvnhvh1.p.xml
+** Description:  Parse for the program dbersrp.p 
+**  Date     Author Notes
+** ========================================================================
+** 05/07/05 GB     Generate the parse
+***************************************************************************
+-->
+<parse-parameters>
+  <report-name>test2 </report-name>
+  <report-type>singleRow </report-type>
+  <parseSheets>
+    <parseSheet>
+      <sheetName>Database</sheetName>
+      <parseRules>
+        <!-- header rules -->
+        <parseRule>
+	  <parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>5</end-col>
+          <start-row />
+          <match-string> -----	</match-string>
+	  <end-row />
+        </parseRule>
+      <parseRule>
+         <parse-type>EndSheetIf</parse-type>
+         <start-col>1</start-col>
+         <end-col>16</end-col>
+         <match-string>Report Criteria:</match-string>
+         <end-row>10</end-row>
+      </parseRule>         
+	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>44</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+	<!-- Content to modify - for each column is a Parse Rule -->
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>1</start-col>
+	  <end-col>8</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Grower</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>10</start-col>
+	  <end-col>19</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Block Code</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>21</start-col>
+	  <end-col>30</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Variety</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>32</start-col>
+	  <end-col>37</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield-08</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>39</start-col>
+	  <end-col>43</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield/HA-08</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>45</start-col>
+	  <end-col>50</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Grade-08</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>52</start-col>
+	  <end-col>57</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Baume-08</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>59</start-col>
+	  <end-col>66</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Harv Date-08</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>68</start-col>
+	  <end-col>73</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Colour-08</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+        	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>75</start-col>
+	  <end-col>80</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield-07</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>82</start-col>
+	  <end-col>86</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield/HA-07</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>88</start-col>
+	  <end-col>93</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Grade-07</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>95</start-col>
+	  <end-col>100</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Baume-07</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>102</start-col>
+	  <end-col>109</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Harv Date-07</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>111</start-col>
+	  <end-col>116</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Colour-07</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+		<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>118</start-col>
+	  <end-col>123</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield-06</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>125</start-col>
+	  <end-col>129</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield/HA-06</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>131</start-col>
+	  <end-col>136</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Grade-06</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>138</start-col>
+	  <end-col>143</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Baume-06</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>145</start-col>
+	  <end-col>152</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Harv Date-06</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>154</start-col>
+	  <end-col>159</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Colour-06</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+		<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>161</start-col>
+	  <end-col>166</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield-05</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>168</start-col>
+	  <end-col>172</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield/HA-05</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>174</start-col>
+	  <end-col>179</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Grade-05</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>181</start-col>
+	  <end-col>186</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Baume-05</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>188</start-col>
+	  <end-col>195</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Harv Date-05</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>197</start-col>
+	  <end-col>202</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Colour-05</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+		<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>204</start-col>
+	  <end-col>209</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield-04</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>211</start-col>
+	  <end-col>215</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Yield/HA-04</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>217</start-col>
+	  <end-col>222</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Grade-04</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>224</start-col>
+	  <end-col>229</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Baume-04</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>231</start-col>
+	  <end-col>238</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Harv Date-04</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>240</start-col>
+	  <end-col>245</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Avg Colour-04</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<!-- end parse rule -->
+      </parseRules>
+    </parseSheet>
+    <!-- Selection Criteria rules -->
+    <parseSheet>
+      <sheetName>Criteria</sheetName>
+      <parseRules>
+        <parseRule>
+          <parse-type>AllDataIf	</parse-type>
+          <start-col>60	</start-col>
+          <end-col>72</end-col>
+          <match-string>End of Report</match-string>
+          <start-row>1</start-row> 
+          <end-row>1</end-row>
+        </parseRule>
+        <parseRule>
+          <parse-type>SelectAllData</parse-type>
+          <start-col>1</start-col>
+          <end-col>132</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Criteria</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+      </parseRules>
+    </parseSheet>
+  </parseSheets>
+</parse-parameters>
+  

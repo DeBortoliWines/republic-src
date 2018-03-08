@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	DEFAULT IF NO PARSER EXISTS FOR THIS REPORT NAME
+-->
+<parse-parameters>
+	<report-name>
+		default
+	</report-name>
+	<report-type>
+		singleRow
+	</report-type>
+	<parseSheets>
+    <parseSheet>
+			<sheetName>
+				Default
+			</sheetName>
+			<parseRules>
+				<parseRule>
+					<parse-type>
+						AllDataIf
+					</parse-type>
+					<start-col>
+						1
+					</start-col>
+					<end-col>
+						1
+					</end-col>
+					<match-string>Any</match-string>
+					<end-row>
+						0
+					</end-row>
+				</parseRule>
+				<parseRule>
+					<parse-type>
+						SelectAllData
+					</parse-type>
+					<start-col>
+						1
+					</start-col>
+					<end-col>
+						132
+					</end-col>
+					<start-row>
+						1
+					</start-row>
+					<end-row>
+						1
+					</end-row>
+					<output-field-name>
+						Default
+					</output-field-name>
+					<output-field-type>
+						string
+					</output-field-type>
+				</parseRule>
+			</parseRules>
+		</parseSheet>
+	</parseSheets>
+</parse-parameters>

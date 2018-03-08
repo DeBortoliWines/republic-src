@@ -1,0 +1,41 @@
+<mapping>
+	
+	<description>Parser Parameters Mapping</description>
+	
+	<!-- Some or all of these are used. Depends on the parseType -->
+	<class name="org.republic.ParseRule">
+	<map-to xml="parseRule" />
+	        <field name="parseType" type="string"/>
+	        <field name="matchString" type="string"/>
+	        <field name="startCol" type="int" node="attribute"/>
+	        <field name="endCol" type="int" node="element"/>
+	        <field name="startRow" type="int" node="element"/>
+	        <field name="endRow" type="int" node="element"/>
+	        <field name="outputFieldName" type="string" />
+	        <field name="outputFieldType" type="string" />
+	</class>
+
+	<class name="org.republic.ParseSheet">
+	  <field name="sheetName" type="string"/>
+	  
+	  <field name="parseRules" type="org.republic.ParseRule" 
+			  collection="collection" >
+	          <bind-xml name="parseRule" location="parseRules"/>
+	  </field>  
+
+	  </class>
+	
+	
+	<class name="org.republic.ParseParameters">
+	  <field name="reportName" type="string"/>
+	  <field name="reportType" type="string"/>
+	  
+	  <field name="parseSheets" type="org.republic.ParseSheet" 
+			  collection="collection" >
+	          <bind-xml name="parseSheet" location="parseSheets"/>
+	  </field>  
+
+	  </class>
+	  	  
+
+</mapping>

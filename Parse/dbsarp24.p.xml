@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***************************************************************************
+** Program:      dbsarp23.p.xml
+** Description:  Parse for the program dbsarp23.p 
+**  Date     Author Notes
+** ========================================================================
+** 05/07/05 GB     Generate the parse
+***************************************************************************
+-->
+<parse-parameters>
+  <report-name>test2 </report-name>
+  <report-type>singleRow </report-type>
+  <parseSheets>
+    <parseSheet>
+      <sheetName>Database</sheetName>
+      <parseRules>
+        <!-- header rules -->
+        <parseRule>
+	  <parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>5</end-col>
+          <start-row />
+          <match-string> -----	</match-string>
+	  <end-row />
+        </parseRule>
+      <parseRule>
+         <parse-type>EndSheetIf</parse-type>
+         <start-col>1</start-col>
+         <end-col>16</end-col>
+         <match-string>Report Criteria:</match-string>
+         <end-row>10</end-row>
+      </parseRule>        
+	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>46</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+	<!-- Content to modify - for each column is a Parse Rule -->
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>1</start-col>
+	  <end-col>8</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Slspsn</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>10</start-col>
+	  <end-col>35</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Salesperson</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>37</start-col>
+	  <end-col>42</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Source</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>44</start-col>
+	  <end-col>53</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Customer</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>55</start-col>
+	  <end-col>82</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Sort Name</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>84</start-col>
+	  <end-col>101</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Report Option</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>103</start-col>
+	  <end-col>126</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>128</start-col>
+	  <end-col>138</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>*TD Lt</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>140</start-col>
+	  <end-col>150</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>*TD Lt LY</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>152</start-col>
+	  <end-col>163</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Act Var Lt</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>167</start-col>
+	  <end-col>178</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>*TD $</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+  	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>180</start-col>
+	  <end-col>191</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>*TD $ LY</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+    	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>193</start-col>
+	  <end-col>205</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Act Var $</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>209</start-col>
+	  <end-col>220</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>*TD Mgn</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>222</start-col>
+	  <end-col>233</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>*TD Mgn LY</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>235</start-col>
+	  <end-col>246</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Mgn $ Var</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+    <!-- end parse rule -->
+      </parseRules>
+    </parseSheet>
+    <!-- Selection Criteria rules -->
+    <parseSheet>
+      <sheetName>Criteria</sheetName>
+      <parseRules>
+        <parseRule>
+          <parse-type>AllDataIf	</parse-type>
+          <start-col>60	</start-col>
+          <end-col>72</end-col>
+          <match-string>End of Report</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+        <parseRule>
+          <parse-type>SelectAllData</parse-type>
+          <start-col>1</start-col>
+          <end-col>132</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Criteria</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+      </parseRules>
+    </parseSheet>
+  </parseSheets>
+</parse-parameters>
+  

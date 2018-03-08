@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***************************************************************************
+** Program:      dbpirp01.p.xml
+** Description:  Parse for the program dbpirp01.p 
+**  Date     Author Notes
+** ========================================================================
+** 01/07/05 GB     Generate the parse req by Ruth
+***************************************************************************
+-->
+<parse-parameters>
+  <report-name>test2 </report-name>
+  <report-type>singleRow </report-type>
+  <parseSheets>
+    <parseSheet>
+      <sheetName>Database</sheetName>
+      <parseRules>
+        <!-- header rules -->
+        <parseRule>
+	  <parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>5</end-col>
+          <start-row />
+          <match-string> -----	</match-string>
+	  <end-row />
+        </parseRule>
+        <parseRule>
+           <parse-type>EndSheetIf</parse-type>
+           <start-col>1</start-col>
+           <end-col>16</end-col>
+           <match-string>Report Criteria:</match-string>
+           <end-row>10</end-row>
+      </parseRule> 
+        
+	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>8</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+	<!-- Content to modify - each column is a Parse Rule -->
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>1</start-col>
+	  <end-col>8</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>List</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>10</start-col>
+	  <end-col>27</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Customer/Analysis Code</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>29</start-col>
+	  <end-col>46</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Item/Analysis Code</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>48</start-col>
+	  <end-col>65</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Item Code</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>67</start-col>
+	  <end-col>90</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>92</start-col>
+	  <end-col>94</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Cur</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>96</start-col>
+	  <end-col>97</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>PL UM</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>99</start-col>
+	  <end-col>108</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Start</output-field-name>
+	  <output-field-type>date</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>110</start-col>
+	  <end-col>119</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Expire</output-field-name>
+	  <output-field-type>date</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>121</start-col>
+	  <end-col>131</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>List Price</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>135</start-col>
+	  <end-col>147</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Min. Price</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>149</start-col>
+	  <end-col>161</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Max. Price</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>163</start-col>
+	  <end-col>166</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Line</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>168</start-col>
+	  <end-col>175</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Status</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>177</start-col>
+	  <end-col>180</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Item UM</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>182</start-col>
+	  <end-col>191</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>UM Conv</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>193</start-col>
+	  <end-col>195</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Alt UM</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>197</start-col>
+	  <end-col>211</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Alt UM List Price</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<!-- end parse rule -->
+      </parseRules>
+    </parseSheet>
+    <!-- Selection Criteria rules -->
+    <parseSheet>
+      <sheetName>Criteria</sheetName>
+      <parseRules>
+        <parseRule>
+          <parse-type>AllDataIf	</parse-type>
+          <start-col>60	</start-col>
+          <end-col>72</end-col>
+          <match-string>End of Report</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+        <parseRule>
+          <parse-type>SelectAllData</parse-type>
+          <start-col>1</start-col>
+          <end-col>132</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Criteria</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+      </parseRules>
+    </parseSheet>
+  </parseSheets>
+</parse-parameters>
+  

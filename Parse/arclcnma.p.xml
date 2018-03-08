@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***************************************************************************
+** Program:      witank2.p.xml
+** Description:  Parse for the program dbersrp.p 
+**  Date     Author Notes
+** ========================================================================
+** 05/07/05 GB     Generate the parse
+***************************************************************************
+-->
+<parse-parameters>
+  <report-name>test2 </report-name>
+  <report-type>singleRow </report-type>
+  <parseSheets>
+    <parseSheet>
+      <sheetName>Database</sheetName>
+      <parseRules>
+        <!-- header rules -->
+        <parseRule>
+	  <parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>5</end-col>
+          <start-row />
+          <match-string> -----	</match-string>
+	  <end-row />
+        </parseRule>
+              <parseRule>
+         <parse-type>EndSheetIf</parse-type>
+         <start-col>1</start-col>
+         <end-col>16</end-col>
+         <match-string>Report Criteria:</match-string>
+         <end-row>10</end-row>
+      </parseRule>
+	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>8</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+	<!-- Content to modify - for each column is a Parse Rule -->
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>1</start-col>
+	  <end-col>20</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Claim Ref</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>22</start-col>
+	  <end-col>29</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Claim</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>31</start-col>
+	  <end-col>38</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>CNote</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>40</start-col>
+	  <end-col>53</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>CL Amt</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>55</start-col>
+	  <end-col>67</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>OP Amt</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>69</start-col>
+	  <end-col>82</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>CN Amt</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>84</start-col>
+	  <end-col>88</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Match</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>87</start-col>
+	  <end-col>91</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Unm GL?</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>		
+	<!-- end parse rule -->
+      </parseRules>
+    </parseSheet>
+    <!-- Selection Criteria rules -->
+    <parseSheet>
+      <sheetName>Criteria</sheetName>
+      <parseRules>
+        <parseRule>
+          <parse-type>AllDataIf	</parse-type>
+          <start-col>60	</start-col>
+          <end-col>72</end-col>
+          <match-string>End of Report</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+        <parseRule>
+          <parse-type>SelectAllData</parse-type>
+          <start-col>1</start-col>
+          <end-col>132</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Criteria</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+      </parseRules>
+    </parseSheet>
+  </parseSheets>
+</parse-parameters>
+  

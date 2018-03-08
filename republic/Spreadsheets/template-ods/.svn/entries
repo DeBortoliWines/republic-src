@@ -1,0 +1,99 @@
+8
+
+dir
+1099
+svn+ssh://enterprise.polonious.com.au/var/svn/otherrepo/trunk/republic/Spreadsheets/template-ods
+svn+ssh://enterprise.polonious.com.au/var/svn/otherrepo
+
+
+
+2005-10-15T12:59:55.000000Z
+114
+stuart
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1b693777-0027-0410-86ac-b4d6103b2306
+
+META-INF
+dir
+
+Thumbnails
+dir
+
+content.xml
+file
+
+
+
+
+2005-10-15T12:59:55.000000Z
+82299d028113761b88c077f403075854
+2005-10-15T12:59:55.000000Z
+114
+stuart
+has-props
+
+meta.xml
+file
+
+
+
+
+2005-10-15T12:59:55.000000Z
+a5dc7230737f8e1adf1aa4a1fc6e39e1
+2005-10-15T12:59:55.000000Z
+114
+stuart
+has-props
+
+mimetype
+file
+
+
+
+
+2005-10-15T12:59:55.000000Z
+0b176652ec360b621a46dfd4268e0c0c
+2005-10-15T12:59:55.000000Z
+114
+stuart
+has-props
+
+settings.xml
+file
+
+
+
+
+2005-10-15T12:59:55.000000Z
+fbf53896f6b71a193e9e3e500cf56399
+2005-10-15T12:59:55.000000Z
+114
+stuart
+has-props
+
+styles.xml
+file
+
+
+
+
+2005-10-15T12:59:55.000000Z
+5623fe65395d41a5d330a7303114d6bc
+2005-10-15T12:59:55.000000Z
+114
+stuart
+has-props
+

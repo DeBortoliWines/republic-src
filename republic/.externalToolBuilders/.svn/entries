@@ -1,0 +1,67 @@
+8
+
+dir
+1099
+svn+ssh://enterprise.polonious.com.au/var/svn/otherrepo/trunk/republic/.externalToolBuilders
+svn+ssh://enterprise.polonious.com.au/var/svn/otherrepo
+
+
+
+2006-04-13T06:13:58.000000Z
+327
+stuart
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1b693777-0027-0410-86ac-b4d6103b2306
+
+org.eclipse.wst.common.modulecore.ComponentStructuralBuilder.launch
+file
+
+
+
+
+2006-04-13T06:13:58.000000Z
+c8878c5f77d60f86ff4fd9f75a506358
+2006-04-13T06:13:58.000000Z
+327
+stuart
+has-props
+
+org.eclipse.wst.common.modulecore.ComponentStructuralBuilderDependencyResolver.launch
+file
+
+
+
+
+2006-04-13T06:13:58.000000Z
+3fbd50ac75d69f946a68fedd809c774b
+2006-04-13T06:13:58.000000Z
+327
+stuart
+has-props
+
+org.eclipse.wst.validation.validationbuilder (3).launch
+file
+
+svn+ssh://enterprise.polonious.com.au/var/svn/otherrepo/trunk/republic/.externalToolBuilders/org.eclipse.wst.validation.validationbuilder%20(3).launch
+
+
+2006-04-13T06:13:58.000000Z
+8136742221e672b9a9951c1f931774df
+2006-04-13T06:13:58.000000Z
+327
+stuart
+has-props
+

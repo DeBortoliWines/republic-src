@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" tests="3" time="4.20" failures="0" name="org.republic.test.OdtTest">
+  <properties>
+    <property value="Java(TM) 2 Runtime Environment, Standard Edition" name="java.runtime.name"/>
+    <property value="/opt/sun-jdk-1.5.0.05/jre/lib/i386" name="sun.boot.library.path"/>
+    <property value="1.5.0_05-b05" name="java.vm.version"/>
+    <property value="Sun Microsystems Inc." name="java.vm.vendor"/>
+    <property value="http://java.sun.com/" name="java.vendor.url"/>
+    <property value=":" name="path.separator"/>
+    <property value="Java HotSpot(TM) Client VM" name="java.vm.name"/>
+    <property value="sun.io" name="file.encoding.pkg"/>
+    <property value="AU" name="user.country"/>
+    <property value="unknown" name="sun.os.patch.level"/>
+    <property value="Java Virtual Machine Specification" name="java.vm.specification.name"/>
+    <property value="/home/sfg/javadev/republic" name="user.dir"/>
+    <property value="1.5.0_05-b05" name="java.runtime.version"/>
+    <property value="sun.awt.X11GraphicsEnvironment" name="java.awt.graphicsenv"/>
+    <property value="/home/sfg/javadev/republic" name="basedir"/>
+    <property value="/opt/sun-jdk-1.5.0.05/jre/lib/endorsed" name="java.endorsed.dirs"/>
+    <property value="i386" name="os.arch"/>
+    <property value="/tmp" name="java.io.tmpdir"/>
+    <property value="
+" name="line.separator"/>
+    <property value="Sun Microsystems Inc." name="java.vm.specification.vendor"/>
+    <property value="Linux" name="os.name"/>
+    <property value="/usr/share/maven-bin-2.0/bin/m2.conf" name="classworlds.conf"/>
+    <property value="ISO-8859-1" name="sun.jnu.encoding"/>
+    <property value="/opt/sun-jdk-1.5.0.05/jre/lib/i386/client:/opt/sun-jdk-1.5.0.05/jre/lib/i386:/opt/sun-jdk-1.5.0.05/jre/../lib/i386" name="java.library.path"/>
+    <property value="Java Platform API Specification" name="java.specification.name"/>
+    <property value="49.0" name="java.class.version"/>
+    <property value="HotSpot Client Compiler" name="sun.management.compiler"/>
+    <property value="2.6.14-gentoo-r5" name="os.version"/>
+    <property value="/home/sfg" name="user.home"/>
+    <property value="Australia/Sydney" name="user.timezone"/>
+    <property value="sun.print.PSPrinterJob" name="java.awt.printerjob"/>
+    <property value="ISO-8859-1" name="file.encoding"/>
+    <property value="1.5" name="java.specification.version"/>
+    <property value="sfg" name="user.name"/>
+    <property value="/usr/share/maven-bin-2.0/core/boot/classworlds-1.1.jar" name="java.class.path"/>
+    <property value="1.0" name="java.vm.specification.version"/>
+    <property value="32" name="sun.arch.data.model"/>
+    <property value="/opt/sun-jdk-1.5.0.05/jre" name="java.home"/>
+    <property value="Sun Microsystems Inc." name="java.specification.vendor"/>
+    <property value="en" name="user.language"/>
+    <property value="mixed mode" name="java.vm.info"/>
+    <property value="1.5.0_05" name="java.version"/>
+    <property value="/opt/sun-jdk-1.5.0.05/jre/lib/ext" name="java.ext.dirs"/>
+    <property value="/opt/sun-jdk-1.5.0.05/jre/lib/rt.jar:/opt/sun-jdk-1.5.0.05/jre/lib/i18n.jar:/opt/sun-jdk-1.5.0.05/jre/lib/sunrsasign.jar:/opt/sun-jdk-1.5.0.05/jre/lib/jsse.jar:/opt/sun-jdk-1.5.0.05/jre/lib/jce.jar:/opt/sun-jdk-1.5.0.05/jre/lib/charsets.jar:/opt/sun-jdk-1.5.0.05/jre/classes" name="sun.boot.class.path"/>
+    <property value="Sun Microsystems Inc." name="java.vendor"/>
+    <property value="/usr/share/maven-bin-2.0" name="maven.home"/>
+    <property value="/home/sfg/.m2/repository" name="localRepository"/>
+    <property value="/" name="file.separator"/>
+    <property value="http://java.sun.com/cgi-bin/bugreport.cgi" name="java.vendor.url.bug"/>
+    <property value="little" name="sun.cpu.endian"/>
+    <property value="UnicodeLittle" name="sun.io.unicode.encoding"/>
+    <property value="" name="sun.cpu.isalist"/>
+  </properties>
+  <testcase time="2.74" name="testExample1"/>
+  <testcase time="1.02" name="testExample2"/>
+  <testcase time="0.40" name="testExample3"/>
+</testsuite>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***************************************************************************
+** Program:      dbmprp02.p.xml
+** Description:  Parse for the program dbsaldrp 7.14.14 
+** Date     Author Notes
+** ========================================================================
+** 05/05/05 GB     Generate the parse
+***************************************************************************
+-->
+<parse-parameters>
+  <report-name>dbmprp02</report-name>
+  <report-type>singleRow </report-type>
+  <parseSheets>
+    <parseSheet>
+      <sheetName>Database</sheetName>
+      <parseRules>
+        <!-- header rules -->
+        <parseRule>
+	  <parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>5</end-col>
+          <start-row />
+          <match-string> -----	</match-string>
+	  <end-row />
+        </parseRule>
+           <parseRule>
+         <parse-type>EndSheetIf</parse-type>
+         <start-col>1</start-col>
+         <end-col>16</end-col>
+         <match-string>Report Criteria:</match-string>
+         <end-row>10</end-row>
+      </parseRule>     
+	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>20</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+	<!-- Content to modify - for each column is a Parse Rule -->
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>1</start-col>
+	  <end-col>8</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Site</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>10</start-col>
+	  <end-col>27</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Item Number</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>29</start-col>
+	  <end-col>31</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>P/M</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>33</start-col>
+	  <end-col>56</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>58</start-col>
+	  <end-col>81</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>83</start-col>
+	  <end-col>90</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Buyer/Planner</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>92</start-col>
+	  <end-col>95</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Line</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>97</start-col>
+	  <end-col>104</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Type</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>106</start-col>
+	  <end-col>113</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Group</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>115</start-col>
+	  <end-col>122</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Date</output-field-name>
+	  <output-field-type>Date</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>124</start-col>
+	  <end-col>187</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Message</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>189</start-col>
+	  <end-col>212</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Action Message Detail</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>214</start-col>
+	  <end-col>231</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Order Number</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>233</start-col>
+	  <end-col>240</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Line/ID</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>242</start-col>
+	  <end-col>253</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Quantity</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>255</start-col>
+	  <end-col>262</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Due Date</output-field-name>
+	  <output-field-type>Date</output-field-type>
+	</parseRule>
+	<!-- end parse rule -->
+      </parseRules>
+    </parseSheet>
+    <!-- Selection Criteria rules -->
+    <parseSheet>
+      <sheetName>Criteria</sheetName>
+      <parseRules>
+        <parseRule>
+          <parse-type>AllDataIf	</parse-type>
+          <start-col>60	</start-col>
+          <end-col>72</end-col>
+          <match-string>End of Report</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+        <parseRule>
+          <parse-type>SelectAllData</parse-type>
+          <start-col>1</start-col>
+          <end-col>132</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Criteria</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+      </parseRules>
+    </parseSheet>
+  </parseSheets>
+</parse-parameters>
+  

@@ -1,0 +1,57 @@
+                                           A / P   A G E D   T R I A L   B A L A N C E
+DATE: 01/02/04  08:57 AM                           XXX STATE OFFICE                                                        PAGE:   1
+PROG: 0756
+
+AGING BASED ON: INVOICE DATE                             AGE DATE: 30/06/04                                        THROUGH PERIOD 12
+                                                                                                       --- INCLUDES INTERCOMPANY ---
+VENDOR #    ALPHA KEY  VENDOR NAME                  -----  I N V O I C E -----
+ VOUCHER INVOICE  TP DESCRIPTION                    INV DATE DUE DATE PAY DATE  DISCOUNT   UP TO 30    31 - 60    61 - 90    OVER 90
+
+111111      111111     BLAH BLAH BLAH             
+
+
+**VENDOR  111111                      ACCRUAL:          .01 OPEN:     1587.30        .00     196.24    1180.30        .00     210.76
+
+222222      222222     DAH DAH DAH                 
+
+
+**VENDOR  222222                      ACCRUAL:          .02 OPEN:       28.20        .00        .00        .00        .00      28.20
+
+333333      333333     GAH GAH GAH
+
+
+**VENDOR  333333                      ACCRUAL:          .03 OPEN:     2611.84        .00    2611.84        .00        .00        .00
+
+444444      444444     BADA BOOM BADA BING
+
+
+**VENDOR  444444                      ACCRUAL:          .04 OPEN:       67.10        .00      67.10        .00        .00        .00
+
+511111      111111     BLAH BLAH BLAH             
+
+
+**VENDOR  511111                      ACCRUAL:          .05 OPEN:     1587.30        .00     196.24    1180.30        .00     210.76
+
+622222      222222     DAH DAH DAH                 
+
+
+**VENDOR  622222                      ACCRUAL:          .06 OPEN:       28.20        .00        .00        .00        .00      28.20
+
+733333      333333     GAH GAH GAH
+
+
+**VENDOR  733333                      ACCRUAL:          .07 OPEN:     2691.84       9.00    2611.84        .00        .00        .00
+
+844444      444444     BADA BOOM BADA BING
+
+
+**VENDOR  844444                      ACCRUAL:          .08 OPEN:       67.10        .10      67.10        .00        .00        .00
+
+911111      111111     BLAH BLAH BLAH             
+
+
+**VENDOR  911111                      ACCRUAL:          .09 OPEN:     9587.30        .20     196.24    1180.30        .00     210.76
+
+***GRAND TOTAL                       *ACCRUAL:          .00 OPEN:  9949434.20        .00 2436543.98 2235234.91 1143246.69 1786328.09
+
+TOTAL RECORDS LISTED =  231

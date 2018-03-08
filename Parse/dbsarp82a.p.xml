@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***************************************************************************
+** Program:      dbreppr1.p.xml
+** Description:  Parse for the program dbreppr1 18.20.2 
+**  Date     Author Notes
+** ========================================================================
+** 05/05/05  GB     Generate the parse
+** 31/01/05  GB     add 2 columns at the end carton variance sales variance
+***************************************************************************
+-->
+<parse-parameters>
+  <report-name>dbreppr1</report-name>
+  <report-type>singleRow </report-type>
+  <parseSheets>
+    <parseSheet>
+      <sheetName>Database</sheetName>
+      <!-- header rules -->
+      <parseRules>
+        <parseRule>
+	<parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>5</end-col>
+          <start-row />
+          <match-string> ----- </match-string>
+	  <end-row />
+        </parseRule>
+        <parseRule>
+         <parse-type>EndSheetIf</parse-type>
+         <start-col>1</start-col>
+         <end-col>20</end-col>
+         <match-string>PRODUCT LINE SUMMARY</match-string>
+         <end-row>1</end-row>
+      </parseRule>
+	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>20</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+	<!-- Content to modify - for each column is a Parse Rule -->
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>1</start-col>
+	  <end-col>28</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>30</start-col>
+	  <end-col>53</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description1</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>55</start-col>
+	  <end-col>64</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>MTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>66</start-col>
+	  <end-col>75</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>MTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>79</start-col>
+	  <end-col>88</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>YTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>90</start-col>
+	  <end-col>99</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>YTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>103</start-col>
+	  <end-col>113</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY MTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>115</start-col>
+	  <end-col>124</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY MTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>128</start-col>
+	  <end-col>138</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY YTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>140</start-col>
+	  <end-col>149</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY YTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+    	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>153</start-col>
+	  <end-col>163</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Carton Variance</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+ 	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>165</start-col>
+	  <end-col>174</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Sales Variance</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+   
+  	<!-- end parse rule -->
+      </parseRules>
+    </parseSheet>
+
+    <!-- Selection Criteria rules -->
+    <parseSheet>
+      <sheetName>Productline</sheetName>
+      <parseRules>
+        <parseRule>
+	  <parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>20</end-col>
+          <start-row />
+          <match-string>PRODUCT LINE SUMMARY</match-string>
+          <end-row />
+        </parseRule> 
+        <parseRule>
+          <parse-type>EndSheetIf</parse-type>
+          <start-col>60</start-col>
+          <end-col>72</end-col>
+          <match-string>End of Report</match-string>
+          <end-row>25</end-row>
+        </parseRule>  
+  	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>20</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>      
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>1</start-col>
+	  <end-col>28</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>30</start-col>
+	  <end-col>53</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Description1</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>55</start-col>
+	  <end-col>64</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>MTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>66</start-col>
+	  <end-col>75</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>MTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>79</start-col>
+	  <end-col>88</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>YTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>90</start-col>
+	  <end-col>99</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>YTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>103</start-col>
+	  <end-col>113</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY MTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>115</start-col>
+	  <end-col>124</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY MTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>128</start-col>
+	  <end-col>138</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY YTD Cartons</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>140</start-col>
+	  <end-col>149</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>LY YTD Sales</output-field-name>
+	  <output-field-type>currency</output-field-type>
+	</parseRule>
+    	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>153</start-col>
+	  <end-col>163</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Carton Variance</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+ 	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>165</start-col>
+	  <end-col>174</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Sales Variance</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>       
+      </parseRules>
+    </parseSheet> 
+    
+    <parseSheet>
+      <sheetName>Criteria</sheetName>
+      <parseRules>
+        <parseRule>
+          <parse-type>AllDataIf	</parse-type>
+          <start-col>1	</start-col>
+          <end-col>15</end-col>
+          <match-string>Report Criteria</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+        <parseRule>
+          <parse-type>SelectAllData</parse-type>
+          <start-col>1</start-col>
+          <end-col>132</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Criteria</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+      </parseRules>
+    </parseSheet>
+  </parseSheets>
+</parse-parameters>

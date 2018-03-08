@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***************************************************************************
+** Program:      vnvtrp01.p.xml
+** Description:  Parse for the program vnvtrp01.p 
+**  Date     Author Notes
+** ========================================================================
+** 05/07/05 GB     Generate the parse
+***************************************************************************
+-->
+<parse-parameters>
+  <report-name>test2 </report-name>
+  <report-type>singleRow </report-type>
+  <parseSheets>
+    <parseSheet>
+      <sheetName>Database</sheetName>
+      <parseRules>
+        <!-- header rules -->
+        <parseRule>
+	  <parse-type>IgnoreNewPageUntil</parse-type>
+          <start-col>1</start-col>
+          <end-col>5</end-col>
+          <start-row />
+          <match-string> -----	</match-string>
+	  <end-row />
+        </parseRule>
+        <parseRule>
+         <parse-type>EndSheetIf</parse-type>
+         <start-col>1</start-col>
+         <end-col>16</end-col>
+         <match-string>Report Criteria:</match-string>
+         <end-row>10</end-row>
+      </parseRule>
+	<parseRule>
+          <parse-type>NewRowIf</parse-type>
+          <start-col>1</start-col>
+          <end-col>8</end-col>
+	  <match-string>notblank</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+	<!-- Content to modify - for each column is a Parse Rule -->
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>1</start-col>
+          <end-col>27</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Variety</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>29</start-col>
+	  <end-col>52</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Grower</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>54</start-col>
+	  <end-col>62</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Block</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>65</start-col>
+	  <end-col>66</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>PG</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>68</start-col>
+          <end-col>69</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>EU</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>71</start-col>
+	  <end-col>71</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S C H</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+    	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>73</start-col>
+	  <end-col>77</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Schld Date</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>79</start-col>
+	  <end-col>79</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>F N L</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>81</start-col>
+	  <end-col>84</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Last Be</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>86</start-col>
+	  <end-col>90</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Last Be Date</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>82</start-col>
+	  <end-col>95</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>High Be</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>97</start-col>
+	  <end-col>101</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>High Be Date</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>	
+	<parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>103</start-col>
+          <end-col>103</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>S R C</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>105</start-col>
+	  <end-col>111</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>1stPsbl Hrvt Date</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+    	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>113</start-col>
+	  <end-col>119</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Estimate To Go Tonnes</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+    	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>121</start-col>
+	  <end-col>129</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>CAP Tonnes</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>131</start-col>
+	  <end-col>139</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>CAP To Go Tonnes</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+     	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>141</start-col>
+	  <end-col>148</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Est Yield/Hectare Tonnes</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+   	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>150</start-col>
+	  <end-col>153</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 13 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>154</start-col>
+          <end-col>154</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>156</start-col>
+	  <end-col>159</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 12 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>160</start-col>
+          <end-col>160</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>162</start-col>
+	  <end-col>165</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 11 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>166</start-col>
+          <end-col>166</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>168</start-col>
+	  <end-col>171</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 10 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>172</start-col>
+          <end-col>172</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>174</start-col>
+	  <end-col>177</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 9 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>178</start-col>
+          <end-col>178</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>180</start-col>
+	  <end-col>183</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 8 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>184</start-col>
+          <end-col>184</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>186</start-col>
+	  <end-col>189</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 7 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>190</start-col>
+          <end-col>190</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+   	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>192</start-col>
+	  <end-col>195</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 6 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>196</start-col>
+          <end-col>196</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>198</start-col>
+	  <end-col>201</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 5 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>202</start-col>
+          <end-col>202</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>204</start-col>
+	  <end-col>207</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 4 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>208</start-col>
+          <end-col>208</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>210</start-col>
+	  <end-col>213</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 3 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>214</start-col>
+          <end-col>214</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>	
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>216</start-col>
+	  <end-col>219</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 2 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>220</start-col>
+          <end-col>220</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+   	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>222</start-col>
+	  <end-col>225</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D - 1 </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>226</start-col>
+          <end-col>226</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+   	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>228</start-col>
+	  <end-col>231</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>S/D </output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+          <parse-type>SelectFieldData</parse-type>
+          <start-col>232</start-col>
+          <end-col>232</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name> </output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>234</start-col>
+	  <end-col>517</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Comments</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+    <!-- end parse rule -->
+      </parseRules>
+    </parseSheet>
+    <!-- Selection Criteria rules -->
+    <parseSheet>
+      <sheetName>Criteria</sheetName>
+      <parseRules>
+        <parseRule>
+          <parse-type>AllDataIf	</parse-type>
+          <start-col>20	</start-col>
+          <end-col>72</end-col>
+          <match-string>End of Report</match-string>
+          <end-row>0</end-row>
+        </parseRule>
+        <parseRule>
+          <parse-type>SelectAllData</parse-type>
+          <start-col>1</start-col>
+          <end-col>132</end-col>
+          <start-row>1</start-row>
+          <end-row>1</end-row>
+          <output-field-name>Criteria</output-field-name>
+          <output-field-type>string</output-field-type>
+        </parseRule>
+      </parseRules>
+    </parseSheet>
+  </parseSheets>
+</parse-parameters>
+  

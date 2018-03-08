@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE office:document-content PUBLIC
+	"-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "office.dtd">
+<office:document-content xmlns:office="http://openoffice.org/2000/office"
+	xmlns:style="http://openoffice.org/2000/style"
+	xmlns:text="http://openoffice.org/2000/text"
+	xmlns:table="http://openoffice.org/2000/table"
+	xmlns:draw="http://openoffice.org/2000/drawing"
+	xmlns:fo="http://www.w3.org/1999/XSL/Format"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:number="http://openoffice.org/2000/datastyle"
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns:chart="http://openoffice.org/2000/chart"
+	xmlns:dr3d="http://openoffice.org/2000/dr3d"
+	xmlns:math="http://www.w3.org/1998/Math/MathML"
+	xmlns:form="http://openoffice.org/2000/form"
+	xmlns:script="http://openoffice.org/2000/script" office:class="spreadsheet"
+	office:version="1.0">
+	<office:script/>
+	<office:font-decls>
+		<style:font-decl style:name="Andale Sans UI"
+			fo:font-family="&apos;Andale Sans UI&apos;"
+			style:font-pitch="variable"/>
+		<style:font-decl style:name="Lucida Sans Unicode"
+			fo:font-family="&apos;Lucida Sans Unicode&apos;"
+			style:font-pitch="variable"/>
+		<style:font-decl style:name="Lucidasans" fo:font-family="Lucidasans"
+			style:font-pitch="variable"/>
+		<style:font-decl style:name="Tahoma" fo:font-family="Tahoma"
+			style:font-pitch="variable"/>
+		<style:font-decl style:name="Albany" fo:font-family="Albany"
+			style:font-family-generic="swiss" style:font-pitch="variable"/>
+		<style:font-decl style:name="Arial" fo:font-family="Arial"
+			style:font-family-generic="swiss" style:font-pitch="variable"/>
+	</office:font-decls>
+	<office:automatic-styles>
+		<style:style style:name="co1" style:family="table-column">
+			<style:properties fo:break-before="auto"
+				style:column-width="2.686cm"/>
+		</style:style>
+		<style:style style:name="co2" style:family="table-column">
+			<style:properties fo:break-before="auto"
+				style:column-width="5.225cm"/>
+		</style:style>
+		<style:style style:name="co3" style:family="table-column">
+			<style:properties fo:break-before="auto"
+				style:column-width="2.267cm"/>
+		</style:style>
+		<style:style style:name="ro1" style:family="table-row">
+			<style:properties style:row-height="0.427cm" fo:break-before="auto"
+				style:use-optimal-row-height="true"/>
+		</style:style>
+		<style:style style:name="ta1" style:family="table"
+			style:master-page-name="Default">
+			<style:properties table:display="true"/>
+		</style:style>
+		<style:style style:name="ce1" style:family="table-cell"
+			style:parent-style-name="Default">
+			<style:properties fo:font-style="italic" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="ce2" style:family="table-cell"
+			style:parent-style-name="Default" style:data-style-name="N107"/>
+	</office:automatic-styles>
+	<office:body>
+		<table:table table:name="Sheet1" table:style-name="ta1">
+			<table:table-column table:style-name="co1"
+				table:default-cell-style-name="Default"/>
+			<table:table-column table:style-name="co2"
+				table:default-cell-style-name="Default"/>
+			<table:table-column table:style-name="co3"
+				table:number-columns-repeated="2"
+				table:default-cell-style-name="ce2"/>
+			<table:table-row table:style-name="ro1">
+				<table:table-cell table:style-name="ce1">
+					<text:p>COLHDG1</text:p>
+				</table:table-cell>
+				<table:table-cell table:style-name="ce1">
+					<text:p>COLHDG2</text:p>
+				</table:table-cell>
+				<table:table-cell table:style-name="ce1">
+					<text:p>COLHDG3</text:p>
+				</table:table-cell>
+				<table:table-cell table:style-name="ce1">
+					<text:p>COLHDG4</text:p>
+				</table:table-cell>
+			</table:table-row>
+			<table:table-row table:style-name="ro1">
+				<table:table-cell>
+					<text:p>ROWCOL1</text:p>
+				</table:table-cell>
+				<table:table-cell>
+					<text:p>ROWCOL2</text:p>
+				</table:table-cell>
+				<table:table-cell table:style-name="Default">
+					<text:p>ROWCOL3</text:p>
+				</table:table-cell>
+				<table:table-cell table:style-name="Default">
+					<text:p>ROWCOL4</text:p>
+				</table:table-cell>
+			</table:table-row>
+			<table:table-row table:style-name="ro1"
+				table:number-rows-repeated="31997">
+				<table:table-cell table:number-columns-repeated="4"/>
+			</table:table-row>
+			<table:table-row table:style-name="ro1">
+				<table:table-cell table:number-columns-repeated="4"/>
+			</table:table-row>
+		</table:table>
+		<table:table table:name="Sheet2" table:style-name="ta1">
+			<table:table-column table:style-name="co3"
+				table:default-cell-style-name="Default"/>
+			<table:table-row table:style-name="ro1">
+				<table:table-cell/>
+			</table:table-row>
+		</table:table>
+		<table:table table:name="Sheet3" table:style-name="ta1">
+			<table:table-column table:style-name="co3"
+				table:default-cell-style-name="Default"/>
+			<table:table-row table:style-name="ro1">
+				<table:table-cell/>
+			</table:table-row>
+		</table:table>
+	</office:body>
+</office:document-content>

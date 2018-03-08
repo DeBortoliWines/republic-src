@@ -1,0 +1,41 @@
+8
+
+dir
+1099
+svn+ssh://enterprise.polonious.com.au/var/svn/otherrepo/trunk/republic/tmp/META-INF
+svn+ssh://enterprise.polonious.com.au/var/svn/otherrepo
+
+
+
+2005-06-05T06:20:51.000000Z
+34
+stuart
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1b693777-0027-0410-86ac-b4d6103b2306
+
+manifest.xml
+file
+
+
+
+
+2005-06-05T06:20:51.000000Z
+bdea9ec8c49b5d5fa6395ca14cca1e5e
+2005-06-05T06:20:51.000000Z
+34
+stuart
+has-props
+
