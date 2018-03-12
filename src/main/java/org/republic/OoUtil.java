@@ -724,7 +724,7 @@ getting this:
 	 */
 	
 	private static void insertCalcCurrency(Element element, Object dataValue) {
-		Namespace textNs = Namespace.getNamespace("text");
+		Namespace textNs = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
 		Namespace officeNs = Namespace.getNamespace("office", "office");
 		Namespace tableNs = Namespace.getNamespace("table", "table");
 		
@@ -772,7 +772,7 @@ getting this:
 
 	
 	private static void insertCalcText(Element element, Object dataValue) {
-		Namespace ns = Namespace.getNamespace("text");
+		Namespace ns = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
 		Element textEl = new Element("p", "text", ns.getURI());
 		textEl.setText((String) dataValue);
 		element.getChildren().clear();
