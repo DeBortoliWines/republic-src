@@ -35,12 +35,12 @@ import org.jdom.xpath.XPath;
 
 /**
  * @author sfg
- * 
+ *
  * This tool unravels and reravels an ooCalc file.
- * 
+ *
  * It also can substitute a dataset into a calc2 or writer2 document
- * 
- * 
+ *
+ *
  */
 public class OoUtil {
 
@@ -55,13 +55,13 @@ public class OoUtil {
 	/*
 	 * Read an oo file into a tempDir for manipulation. @param oo file. @param
 	 * tempDir (if null, uses temp/ooOut)
-	 * 
+	 *
 	 * @return tempDir created.
 	 */
 	public static File unravelOoFile(String inputFile, String tempDirName) {
 
 		if (tempDirName == null) {
-			
+
 			tempDirName = System.getProperty("java.io.tmpdir") + File.separator
 					+ "ooOut";
 		}
@@ -200,28 +200,28 @@ public class OoUtil {
 	}
 	public static void updateCalcContent(File contentFile, String sheetName, String databaseName, DataSet dataSet)
 	throws Exception {
-		
+
 		SAXBuilder builder = new SAXBuilder();
 		try {
 			Document doc = builder.build(contentFile);
 			// List allNamespaces =
 			// doc.getRootElement().getAdditionalNamespaces();
 			resolveOOAliases(doc, dataSet);
-			
+
 			Element tableElement = getTableElement( sheetName,doc);
 			if (tableElement==null){
 				logger.severe("unable to find tablename:"+sheetName);
 				return;
 			}
-			
+
 			//Attribute attr = sheetElement.getAttribute("name");
-			
-			
+
+
 			XPath xPath = XPath
 			.newInstance("//table:table/table:table-row/*");
-			List nodes = xPath.selectNodes(tableElement);			
+			List nodes = xPath.selectNodes(tableElement);
 
-			
+
 			Element element = substitutionsAvailableCalc(nodes, dataSet);
 //			Iterator iter = nodes.iterator();
 //			while (iter.hasNext()) {
@@ -231,14 +231,14 @@ public class OoUtil {
 //			}
 
 			logger.info("Found element?"+element);
-			
+
 			replaceCalcElement(element, dataSet);
-			
+
 //			XPath xPath2 = XPath
 //			.newInstance("//office:document-content/office:body/office:spreadsheet/table:table");
 //			Element element = (Element)xPath2.selectSingleNode(doc);
 //			removeElementRow(1,element);
-	
+
 			XMLOutputter outp = new XMLOutputter(Format.getPrettyFormat());
 			FileOutputStream outFileStr = new FileOutputStream(contentFile);
 			outp.output(doc, outFileStr);
@@ -315,13 +315,13 @@ public class OoUtil {
 		XPath xPath = XPath.newInstance("//office:document-content/office:body/office:spreadsheet/table:table");
 		List tableNodes = xPath.selectNodes(doc);
 		Element tableElement= null;
-		
+
 		Iterator tableIter = tableNodes.iterator();
 		while (tableIter.hasNext()){
 			tableElement = (Element)tableIter.next();
 			Attribute attribute = getCalcAttribute(tableElement, "name");
 			//logger.info("Check Table Name:"+attribute.getValue()+" equal to Sheet Name:"+sheetName);
-			if (attribute!=null 
+			if (attribute!=null
 					&& attribute.getValue().equalsIgnoreCase(sheetName)){
 				logger.info("Matched!:"+sheetName);
 				attribute.setValue(sheetName);
@@ -330,36 +330,36 @@ public class OoUtil {
 			tableElement=null;
 		}
 		return tableElement;
-		
+
 	}
-	public static void updateCalcMultiRowContent(File contentFile,	String sheetName, 
+	public static void updateCalcMultiRowContent(File contentFile,	String sheetName,
 			String databaseName, DataSet dataSet) throws Exception {
-		
+
 		SAXBuilder builder = new SAXBuilder();
 		try {
-			
+
 			logger.info("DS Definitions are: "+dataSet.listDefinitions());
-			
+
 			Document doc = builder.build(contentFile);
-			
+
 			resolveOOAliases(doc, dataSet);
 			// Go get the table (sheet with the name provided..
 			Element tableElement = getTableElement(sheetName,doc);
-						
+
 			if (tableElement==null){
 				logger.severe("unable to find tablename:"+sheetName);
 				return;
 			}
-			
+
 			Attribute attribute = getCalcAttribute(tableElement, "name");
 			if (attribute!=null && !databaseName.equalsIgnoreCase(sheetName) ){
 				logger.info("Setting Table name to :"+databaseName);
 				attribute.setValue(databaseName);
 			}
-			
+
 //			XPath xPath2 = XPath.newInstance("//table:table/table:table-row/*");
 			XPath xPath2 = XPath.newInstance("table:table-row/*");
-			List nodes2 = xPath2.selectNodes(tableElement);			
+			List nodes2 = xPath2.selectNodes(tableElement);
 
 			Element element = substitutionsAvailableCalc(nodes2, dataSet);
 			//logger.info("element found so subs available:" + element);
@@ -367,7 +367,7 @@ public class OoUtil {
 			//Element el = (Element)element.getParent().getParent();
 			//Attribute attribute2 = getCalcAttribute((Element)element.getParent(), "name");
 			//logger.info("ParentAttrs:"+el.getAttributes());
-			
+
 			if (element != null) {
 				// If so, copy the whole node from this point, update it and add
 				// it back into the tree.
@@ -400,14 +400,14 @@ public class OoUtil {
 			outp.output(doc, outFileStr);
 			outFileStr.close();
 
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.severe(e.toString());
 
 		}
 	}
-	
+
 	/*
 	 * Removes the ith row of a table.
 	 * @PARAM row to remove
@@ -430,13 +430,13 @@ public class OoUtil {
 				}
 			}
 		}
-		
+
 		if (removeMe!=null){
 			logger.info("detached:"+removeMe);
 			removeMe.detach();
 		}
 	}
-	
+
 	public static Element substitutionsAvailable(List nodes,
 			DataSet fieldChanges) {
 		Iterator i = nodes.iterator();
@@ -454,14 +454,14 @@ public class OoUtil {
 	}
 
 	public static Element substitutionsAvailableCalc(List nodes, DataSet dataSet) {
-		
+
 		Iterator iter = nodes.iterator();
 
 		while (iter.hasNext()) {
-			
+
 			Element element = (Element) iter.next();
 			Attribute attribute = getCalcAttribute(element, "style-name");
-			
+
 			if (attribute != null) {
 				String styleValue = attribute.getValue();
 				logger.info("Style:" + styleValue);
@@ -500,7 +500,7 @@ public class OoUtil {
 	/*
 	 * This process works through a tree of data to create multiple rows one per
 	 * data set row
-	 * 
+	 *
 	 * TODO iCtr is used to work out where we are in the process of unravelling
 	 * the data. Need to unravel and check the data.
 	 */
@@ -550,10 +550,10 @@ public class OoUtil {
 		int numOfColumns=element.getChildren().size()-1;
 		int numOfColumnsExpected=dataRow.dataColumns.size();
 		Element firstElement=null;
-		Attribute firstStyleAttribute =null;	
+		Attribute firstStyleAttribute =null;
 		if(numOfColumnsExpected>numOfColumns){
 			firstElement=(Element)element.getChildren().get(0);
-			firstStyleAttribute = getCalcAttribute(firstElement, "style-name");				
+			firstStyleAttribute = getCalcAttribute(firstElement, "style-name");
 			String value=firstStyleAttribute.getValue();
 			String prefix="";
 			if(value.contains(CommonNames.DATA)){
@@ -563,7 +563,7 @@ public class OoUtil {
 			}
 			int diffOfNum=numOfColumnsExpected-numOfColumns;
 			int i=1;
-			while(i<=diffOfNum){				
+			while(i<=diffOfNum){
 				Element newElement=(Element)firstElement.clone();
 				Attribute newAttribute = getCalcAttribute(newElement, "style-name");
 				newAttribute.setValue(prefix+(numOfColumns+i));
@@ -577,7 +577,7 @@ public class OoUtil {
 			Element childElement = (Element) elementIter.next();
 			replaceCalcElement(childElement, dataSet, dataRow);
 			//set the style to the first column style for the added columns
-			if(numOfColumnsExpected>numOfColumns && i>numOfColumns && i<=numOfColumnsExpected){	
+			if(numOfColumnsExpected>numOfColumns && i>numOfColumns && i<=numOfColumnsExpected){
 				Attribute childAttribute = getCalcAttribute(childElement, "style-name");
 				if(childAttribute!=null){
 					childAttribute.setValue(firstStyleAttribute.getValue());
@@ -592,14 +592,14 @@ public class OoUtil {
 	 * Specifically designed to replace calc elements..
 	 */
 	private static void replaceCalcElement(Element element, DataSet dataSet, DataRow dataRow) {
-		
+
 		Attribute attribute = getCalcAttribute(element, "style-name");
 
 		if (attribute != null) {
 			String styleValue = attribute.getValue();
 
 			Object dataValue = dataRow.getDataColumn(styleValue);
-			
+
 			if (dataValue != null) {
 				DataSetDefinition dsd = dataSet.getDefinition(styleValue);
 				//logger.info("DSD.fieldType"+dsd.getFieldType());
@@ -610,7 +610,7 @@ public class OoUtil {
 				else if (dsd.getFieldType().equalsIgnoreCase("currency"))
 					insertCalcCurrency(element, dataValue);
 				else if (dsd.getFieldType().equalsIgnoreCase("number"))
-					insertCalcCurrency(element, dataValue);				
+					insertCalcNumber(element, dataValue);
 				else
 					insertCalcText(element, dataValue);
 			}
@@ -621,21 +621,21 @@ public class OoUtil {
 	 * Specifically designed to replace calc elements..
 	 */
 	private static void replaceCalcElement(Element element, DataSet dataSet) {
-		
+
 		Attribute attribute = getCalcAttribute(element, "style-name");
 		//logger.info("Attr1:"+attribute);
 		if (attribute == null) {
 			attribute = getCalcAttribute(element, "parent-style-name");
 			//logger.info("Attr2:"+attribute);
 		}
-		
+
 		if (attribute != null) {
 			String styleValue = attribute.getValue();
 			//logger.info("Looking for Style:"+styleValue);
 			DataSetDefinition dataSetDefinition = dataSet
 					.getDefinition(styleValue);
 			if (dataSetDefinition != null) {
-				
+
 				Object dataValue = dataSet
 						.getFirstDataSetValue(dataSetDefinition);
 				//logger.info("Found Style:"+styleValue+" dataValue is:"+dataValue);
@@ -644,17 +644,17 @@ public class OoUtil {
 		}
 	}
 /*
- * 
+ *
  need this:
  						<table:table-cell office:value-type="date" office:date-value="2005-02-01">
-						<text:p>01/02/05</text:p>					
-						</table:table-cell>				
+						<text:p>01/02/05</text:p>
+						</table:table-cell>
 getting this:
-						<table:table-cell table:style-name="Data3" xmlns:office="office" office:value-type="date" 
+						<table:table-cell table:style-name="Data3" xmlns:office="office" office:value-type="date"
 									office:date-value="2004-07-15">
 							<text:p xmlns:text="text">15/07/2004</text:p>
 						</table:table-cell>
-          
+
 	<table:table-cell table:style-name="ce3" office:value-type="float" office:value="121"><t
 	ext:p>121</text:p></table:table-cell>
 	*/
@@ -663,7 +663,7 @@ getting this:
 		Namespace ns = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
 		Namespace tableNs = Namespace.getNamespace("table","urn:oasis:names:tc:opendocument:xmlns:table:1.0");
 		Element textEl = new Element("p", "text", ns.getURI());
-		
+
 		String dataString = (String) dataValue;
 		Date cellDate = null;
 		SimpleDateFormat sdfFinal = new SimpleDateFormat("yyyy-MM-dd");
@@ -674,7 +674,7 @@ getting this:
 			dataString = sdfLocaleCC.format(cellDate);
 		}
 		catch(Exception e){}
-		
+
 		Namespace officeNs = Namespace.getNamespace("office", "office");
 		element.setAttribute("value-type","date",officeNs);
 		// Added
@@ -682,7 +682,7 @@ getting this:
 		removeattribute(element,"style-name");
 		// The VITAL line that inserts the template.ods table:style ce2 as the date format!
 		element.setAttribute("style-name","ce2",tableNs);
-		
+
 		if (cellDate!=null)
 			element.setAttribute("date-value",sdfFinal.format(cellDate),officeNs);
 		textEl.setText(dataString);
@@ -696,52 +696,52 @@ getting this:
 	    Matcher matcher=pat.matcher(oldString);
 		return matcher.replaceAll(newVal);
     }
-	//<table:table-cell table:style-name="ce1" office:value-type="currency" 
+	//<table:table-cell table:style-name="ce1" office:value-type="currency"
 	// office:currency="AUD" office:value="15200"><text:p>$15,200.00</text:p>
 		//</table:table-cell>
-	
+
 	/*
-	 * 
-	 
+	 *
+
 	 Should Be:
-	 
-  <table:table-cell 
-  	office:value-type="currency" 
-  	office:currency="AUD" 
+
+  <table:table-cell
+  	office:value-type="currency"
+  	office:currency="AUD"
   	office:value="0.01">
   		<text:p>$0.01</text:p>
-</table:table-cell>    
+</table:table-cell>
          Currently:
 
-<table:table-cell 
-	xmlns:office="office" 
-	office:value-type="currency" 
-	office:currency="AUD" 
+<table:table-cell
+	xmlns:office="office"
+	office:value-type="currency"
+	office:currency="AUD"
 	office:value="0.01">
             <text:p xmlns:text="text">$0.01</text:p>
   </table:table-cell>
-  
+
 	 */
-	
+
 	private static void insertCalcCurrency(Element element, Object dataValue) {
 		Namespace textNs = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
 		Namespace officeNs = Namespace.getNamespace("office", "office");
 		Namespace tableNs = Namespace.getNamespace("table", "table");
-		
+
 		element.setAttribute("value-type","currency",officeNs);
 		element.setAttribute("currency","AUD",officeNs);
-		
+
 		removeattribute(element,"style-name");
-				
+
 		String dataString = (String) dataValue;
 		String origDataString = dataString;
 		dataString = replaceString(dataString,"$","");
 		dataString = replaceString(dataString,",","");
 		dataString = dataString.trim();
-		
+
 		if (dataString.startsWith("."))
 			dataString="0"+dataString;
-		
+
 		element.setAttribute("value",dataString,officeNs);
 		origDataString = origDataString.trim();
 		if (origDataString.startsWith("."))
@@ -752,9 +752,9 @@ getting this:
 		textEl.setText(origDataString);
 		element.getChildren().clear();
 		element.getChildren().add(textEl);
-		//removeattribute(textEl,"text");		
+		//removeattribute(textEl,"text");
 	}
-	
+
 	private static void removeattribute(Element element,String attrName){
 		//logger.info("size"+element.getAttributes().size());
 		Iterator childIter = element.getAttributes().iterator();
@@ -770,9 +770,22 @@ getting this:
 		}
 	}
 
-	
 	private static void insertCalcText(Element element, Object dataValue) {
 		Namespace ns = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
+
+		Element textEl = new Element("p", "text", ns.getURI());
+		textEl.setText((String) dataValue);
+		element.getChildren().clear();
+		element.getChildren().add(textEl);
+	}
+
+	private static void insertCalcNumber(Element element, Object dataValue) {
+		Namespace ns = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
+
+		element.setAttribute("value-type", "float", Namespace.getNamespace("office", "office"));
+		element.setAttribute("value", (String) dataValue, Namespace.getNamespace("office", "office"));
+		element.setAttribute("value-type", "float", Namespace.getNamespace("calcext", "calcext"));
+
 		Element textEl = new Element("p", "text", ns.getURI());
 		textEl.setText((String) dataValue);
 		element.getChildren().clear();
