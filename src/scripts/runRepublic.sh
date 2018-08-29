@@ -6,7 +6,7 @@
 #
 
 # Setup standard Republic Parameters for use in other runs.
-export REPUBLIC_VERSION=0.6.1
+export REPUBLIC_VERSION=0.6.3
 #JAVA_HOME=/home/sfg/j2sdk_nb/j2sdk1.4.2/jre
 export MAVEN_HOME=$HOME/.m2
 export CLASSPATH=$MAVEN_HOME/repository/republic/republic/$REPUBLIC_VERSION/republic-$REPUBLIC_VERSION.jar:\
@@ -35,12 +35,12 @@ DEBUG=
 printf "Republic - REPORT: $REPORTNAME SPREADHEET: $SPREADSHEETNAME PARSEXML: $PARSEPARAMETERS"
 echo Removing previous copy of output Spreadsheet $SPREADSHEETNAME
 
-$JAVA_HOME/bin/java -classpath $CLASSPATH $REPUBLICSTART\
+/usr/bin/java -classpath $CLASSPATH $REPUBLICSTART\
 	$REPORTNAME\
 	$SPREADSHEETNAME\
 	$PARSEPARAMETERS\
 	$DEBUG
 
 # Now run up the output in oocalc!
-	
-$OOCALC $SPREADSHEETNAME
+
+# $OOCALC $SPREADSHEETNAME

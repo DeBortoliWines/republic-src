@@ -5,7 +5,7 @@
 	<groupId>republic</groupId>
 	<artifactId>republic</artifactId>
 	<packaging>jar</packaging>
-	<version>0.6.2</version>
+	<version>0.6.3</version>
 	<name>Republic</name>
 	<url>http://www.polonious.com.au</url>
 	<dependencies>
