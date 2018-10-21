@@ -787,7 +787,9 @@ getting this:
 		element.setAttribute("value-type", "float", Namespace.getNamespace("calcext", "calcext"));
 
 		Element textEl = new Element("p", "text", ns.getURI());
-		textEl.setText((String) dataValue);
+		String strValue = ((String)dataValue).trim();
+		//textEl.setText((String) dataValue);
+		textEl.setText(strValue);
 		element.getChildren().clear();
 		element.getChildren().add(textEl);
 	}
