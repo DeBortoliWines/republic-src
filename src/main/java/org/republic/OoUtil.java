@@ -784,9 +784,9 @@ getting this:
 
 		String strValue = ((String)dataValue).trim();
 
-		element.setAttribute("value-type", "float", Namespace.getNamespace("office", "office"));
-		element.setAttribute("value", strValue, Namespace.getNamespace("office", "office"));
-		element.setAttribute("value-type", "float", Namespace.getNamespace("calcext", "calcext"));
+		element.setAttribute("value-type", "float", Namespace.getNamespace("office", "urn:oasis:names:tc:opendocument:xmlns:office:1.0"));
+		element.setAttribute("value", strValue, Namespace.getNamespace("office", "urn:oasis:names:tc:opendocument:xmlns:office:1.0"));
+		element.setAttribute("value-type", "float", Namespace.getNamespace("calcext", "urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0"));
 
 		Element textEl = new Element("p", "text", ns.getURI());
 		//textEl.setText((String) dataValue);

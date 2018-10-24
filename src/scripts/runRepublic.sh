@@ -6,7 +6,7 @@
 #
 
 # Setup standard Republic Parameters for use in other runs.
-export REPUBLIC_VERSION=0.6.3
+export REPUBLIC_VERSION=0.6.4
 #JAVA_HOME=/home/sfg/j2sdk_nb/j2sdk1.4.2/jre
 export MAVEN_HOME=$HOME/.m2
 export CLASSPATH=$MAVEN_HOME/repository/republic/republic/$REPUBLIC_VERSION/republic-$REPUBLIC_VERSION.jar:\
