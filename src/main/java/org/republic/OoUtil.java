@@ -782,12 +782,15 @@ getting this:
 	private static void insertCalcNumber(Element element, Object dataValue) {
 		Namespace ns = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
 
-		element.setAttribute("value-type", "float", Namespace.getNamespace("office", "office"));
-		element.setAttribute("value", (String) dataValue, Namespace.getNamespace("office", "office"));
-		element.setAttribute("value-type", "float", Namespace.getNamespace("calcext", "calcext"));
+		String strValue = ((String)dataValue).trim();
+
+		element.setAttribute("value-type", "float", Namespace.getNamespace("office", "urn:oasis:names:tc:opendocument:xmlns:office:1.0"));
+		element.setAttribute("value", strValue, Namespace.getNamespace("office", "urn:oasis:names:tc:opendocument:xmlns:office:1.0"));
+		element.setAttribute("value-type", "float", Namespace.getNamespace("calcext", "urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0"));
 
 		Element textEl = new Element("p", "text", ns.getURI());
-		textEl.setText((String) dataValue);
+		//textEl.setText((String) dataValue);
+		textEl.setText(strValue);
 		element.getChildren().clear();
 		element.getChildren().add(textEl);
 	}
