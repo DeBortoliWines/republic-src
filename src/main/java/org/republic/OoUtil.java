@@ -782,7 +782,10 @@ getting this:
 	private static void insertCalcNumber(Element element, Object dataValue) {
 		Namespace ns = Namespace.getNamespace("text","urn:oasis:names:tc:opendocument:xmlns:text:1.0");
 
-		String strValue = ((String)dataValue).trim();
+		String strValue = ((String)dataValue)
+			.trim()
+			.replace(",","")
+			.replace("$", "");
 
 		element.setAttribute("value-type", "float", Namespace.getNamespace("office", "urn:oasis:names:tc:opendocument:xmlns:office:1.0"));
 		element.setAttribute("value", strValue, Namespace.getNamespace("office", "urn:oasis:names:tc:opendocument:xmlns:office:1.0"));
