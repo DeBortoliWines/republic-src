@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ***************************************************************************
-** Program:      dbedirp4.p.xml
-** Description:  Parse for the program dbreppr1 18.20.2 
-**  Date     Author Notes
+** Program:      dbsaldrp.p.xml
+** Description:  Parse for the program dbsaldrp 7.14.14 
+** Date     Author Notes
 ** ========================================================================
 ** 05/05/05 GB     Generate the parse
 ***************************************************************************
 -->
 <parse-parameters>
-  <report-name>dbedirp4</report-name>
+  <report-name>dbcs05rp</report-name>
   <report-type>singleRow </report-type>
   <parseSheets>
     <parseSheet>
@@ -24,17 +24,17 @@
           <match-string> -----	</match-string>
 	  <end-row />
         </parseRule>
-        <parseRule>
+           <parseRule>
          <parse-type>EndSheetIf</parse-type>
          <start-col>1</start-col>
          <end-col>16</end-col>
          <match-string>Report Criteria:</match-string>
          <end-row>10</end-row>
-      </parseRule>
+      </parseRule>     
 	<parseRule>
           <parse-type>NewRowIf</parse-type>
           <start-col>1</start-col>
-          <end-col>3</end-col>
+          <end-col>20</end-col>
 	  <match-string>notblank</match-string>
           <end-row>0</end-row>
         </parseRule>
@@ -42,118 +42,109 @@
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
 	  <start-col>1</start-col>
-	  <end-col>12</end-col>
+	  <end-col>8</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
-	  <output-field-name>Product Line</output-field-name>
+	  <output-field-name>Site</output-field-name>
 	  <output-field-type>string</output-field-type>
 	</parseRule>
-	<parseRule>
+        <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>14</start-col>
-	  <end-col>21</end-col>
+	  <start-col>10</start-col>
+	  <end-col>17</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
-	  <output-field-name>Part</output-field-name>
+	  <output-field-name>Site 1 Eff Date</output-field-name>
+	  <output-field-type>date</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>19</start-col>
+	  <end-col>36</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Item Number</output-field-name>
 	  <output-field-type>string</output-field-type>
 	</parseRule>
-	<parseRule>
+        <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>23</start-col>
-	  <end-col>52</end-col>
+	  <start-col>38</start-col>
+	  <end-col>61</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Description</output-field-name>
 	  <output-field-type>string</output-field-type>
 	</parseRule>
-	<parseRule>
-	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>54</start-col>
-	  <end-col>59</end-col>
-	  <start-row>1</start-row>
-	  <end-row>1</end-row>
-	  <output-field-name>Source State</output-field-name>
-	  <output-field-type>string</output-field-type>
-	</parseRule>
-	<parseRule>
-	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>61</start-col>
-	  <end-col>100</end-col>
-	  <start-row>1</start-row>
-	  <end-row>1</end-row>
-	  <output-field-name>Group Description </output-field-name>
-	  <output-field-type>string</output-field-type>
-	</parseRule>
-         <parseRule>
-	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>102</start-col>
-	  <end-col>112</end-col>
-	  <start-row>1</start-row>
-	  <end-row>1</end-row>
-	  <output-field-name>Class </output-field-name>
-	  <output-field-type>string</output-field-type>
-	</parseRule>       
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>114</start-col>
-	  <end-col>124</end-col>
+	  <start-col>63</start-col>
+	  <end-col>70</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
-	  <output-field-name>Cartons </output-field-name>
-	  <output-field-type>number</output-field-type>
+	  <output-field-name>Type</output-field-name>
+	  <output-field-type>string</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>126</start-col>
-	  <end-col>138</end-col>
+	  <start-col>72</start-col>
+	  <end-col>79</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
-	  <output-field-name>Sales Value</output-field-name>
-	  <output-field-type>number</output-field-type>
-	</parseRule>	
-	<parseRule>
+	  <output-field-name>Location</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>140</start-col>
-	  <end-col>150</end-col>
+	  <start-col>81</start-col>
+	  <end-col>98</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
-	  <output-field-name>LY Cartons</output-field-name>
+	  <output-field-name>Lot/Serial</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>100</start-col>
+	  <end-col>108</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Reference</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>110</start-col>
+	  <end-col>121</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Qty On Hand</output-field-name>
 	  <output-field-type>number</output-field-type>
 	</parseRule>
-	<parseRule>
+        <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>152</start-col>
-	  <end-col>164</end-col>
+	  <start-col>123</start-col>
+	  <end-col>137</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
-	  <output-field-name>LY Sales</output-field-name>
-	  <output-field-type>number</output-field-type>
-	</parseRule>	
-	<parseRule>
-	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>166</start-col>
-	  <end-col>177</end-col>
-	  <start-row>1</start-row>
-	  <end-row>1</end-row>
-	  <output-field-name>Carton Variance</output-field-name>
-	  <output-field-type>number</output-field-type>
-	</parseRule>	
-	<parseRule>
-	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>179</start-col>
-	  <end-col>191</end-col>
-	  <start-row>1</start-row>
-	  <end-row>1</end-row>
-	  <output-field-name>Sales Variance</output-field-name>
+	  <output-field-name>Cost 1</output-field-name>
 	  <output-field-type>number</output-field-type>
 	</parseRule>
-    <parseRule>
+        <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>193</start-col>
-	  <end-col>206</end-col>
+	  <start-col>139</start-col>
+	  <end-col>153</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
-	  <output-field-name>Extended DBW Price</output-field-name>
+	  <output-field-name>Cost 2</output-field-name>
+	  <output-field-type>number</output-field-type>
+	</parseRule>
+        <parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>155</start-col>
+	  <end-col>166</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Variance</output-field-name>
 	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<!-- end parse rule -->
@@ -183,3 +174,4 @@
     </parseSheet>
   </parseSheets>
 </parse-parameters>
+  

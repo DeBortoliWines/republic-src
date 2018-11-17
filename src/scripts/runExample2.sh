@@ -11,7 +11,7 @@
 # Parm1 - <Report File Name and Location>
 REPORTNAME=TestData/TestReport002.rpt
 #	Parm2 - <Output Spreadsheet Name and Location>
-SPREADSHEETNAME=TestData/Example2.sxc
+SPREADSHEETNAME=TestData/Example2.ods
 #	Parm3 - <XML Parse File>
 PARSEPARAMETERS=TestData/Example2Parse.xml
 #	Parm4 - DEBUG to printout verbose log of actions or blank for just errors/warnings

@@ -114,7 +114,7 @@
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
 	  <start-col>97</start-col>
-	  <end-col>101</end-col>
+	  <end-col>104</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Parent Location</output-field-name>
@@ -167,8 +167,8 @@
 	</parseRule>	
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>162</start-col>
-	  <end-col>170</end-col>
+	  <start-col>170</start-col>
+	  <end-col>183</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Component Reference</output-field-name>
@@ -176,8 +176,8 @@
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>172</start-col>
-	  <end-col>181</end-col>
+	  <start-col>185</start-col>
+	  <end-col>194</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Qty Issued</output-field-name>
@@ -185,8 +185,8 @@
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>183</start-col>
-	  <end-col>191</end-col>
+	  <start-col>196</start-col>
+	  <end-col>205</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Iss%</output-field-name>
@@ -194,8 +194,8 @@
 	</parseRule>	
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>193</start-col>
-	  <end-col>198</end-col>
+	  <start-col>207</start-col>
+	  <end-col>212</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>End Source</output-field-name>
@@ -203,11 +203,56 @@
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
-	  <start-col>200</start-col>
-	  <end-col>227</end-col>
+	  <start-col>214</start-col>
+	  <end-col>241</end-col>
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Grower</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>243</start-col>
+	  <end-col>251</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>True End Source</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>253</start-col>
+	  <end-col>265</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Issue Percentage</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>267</start-col>
+	  <end-col>282</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Iss Qty</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>284</start-col>
+	  <end-col>299</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Iss Frac Qty</output-field-name>
+	  <output-field-type>string</output-field-type>
+	</parseRule>
+	<parseRule>
+	  <parse-type>SelectFieldData</parse-type>
+	  <start-col>301</start-col>
+	  <end-col>316</end-col>
+	  <start-row>1</start-row>
+	  <end-row>1</end-row>
+	  <output-field-name>Issue Los/Gain</output-field-name>
 	  <output-field-type>string</output-field-type>
 	</parseRule>
 	<!-- end parse rule -->

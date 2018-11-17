@@ -118,7 +118,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 1</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -127,7 +127,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 2</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -136,7 +136,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 3</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -145,7 +145,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 4</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -154,7 +154,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 5</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -163,7 +163,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 6</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -172,7 +172,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 7</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -181,7 +181,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 8</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -190,7 +190,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 9</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -199,7 +199,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 10</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -208,7 +208,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 11</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -217,7 +217,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 12</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -226,7 +226,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty 13</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -235,7 +235,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Total Sales Qty</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -244,7 +244,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Avg Qty of MTD with Sls</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -253,7 +253,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Man. Site Avail O/H</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -262,7 +262,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Man. Site In-Transit</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -271,7 +271,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Rem. Aust Avail O/H</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -280,7 +280,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Rem. Aust In-Transit</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -289,7 +289,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Months Remaining</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -298,7 +298,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Months with Sales</output-field-name> 
-	   <output-field-type>currency</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -307,7 +307,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>UM Conv</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>	  	  
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -316,7 +316,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Sales Qty AVG</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -325,7 +325,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Min Order</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -334,7 +334,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Variance %</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -352,7 +352,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Order Period</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -361,7 +361,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Safety Stock</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -370,7 +370,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Safety Days</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
 	  <parseRule>
 	   <parse-type>SelectFieldData</parse-type> 
@@ -379,7 +379,7 @@
 	   <start-row>1</start-row> 
 	   <end-row>1</end-row> 
 	   <output-field-name>Reorder Point</output-field-name> 
-	   <output-field-type>number</output-field-type> 
+	   <output-field-type>decimal</output-field-type> 
 	  </parseRule>
           <!-- end parse rule -->
       </parseRules>
