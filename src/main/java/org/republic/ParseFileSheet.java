@@ -34,7 +34,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * @author sfg
- * 
+ *
  * To change the template for this generated type comment go to Window -
  * Preferences - Java - Code Generation - Code and Comments
  */
@@ -49,7 +49,7 @@ public class ParseFileSheet {
 
 	// New Row OutputDataColumns
 	private Collection newRowOutputDataColumns = new LinkedList();
-	
+
 	// These hold the current parse sheet being created
 	private Collection parseSheetColumnNames = new LinkedList();
 	private Collection parseSheetOutputDataRows = new LinkedList();
@@ -62,6 +62,7 @@ public class ParseFileSheet {
 	private int multiRowMaxLines = -1;
 
 	private String multiRowReportLine[] = new String[200];
+	private String namedRow = new String();
 
 	private boolean newPage = true;
 
@@ -72,20 +73,20 @@ public class ParseFileSheet {
 
 			// Initialise for processing.
 			allDataMode = false;
-			
+
 			setParseSheetOutputDataRows(new LinkedList());
 			setParseSheetColumnNames(new LinkedList());
-			
+
 			//setParseSheet(thisParseSheet);
 
 
 			OutputDataBean odb = new OutputDataBean();
 			// Get the column names we are expecting into the outputdatabean.
 			setColumnNames(thisParseSheet, odb);
-			
+
 			// Now Parse the input file into Java Objects.
 			parseInputFile(thisParseSheet,inputReport);
-			
+
 			odb.setOutputDataRows(this.getParseSheetOutputDataRows());
 
 			odb.setOutputDataColumnNames(this.getParseSheetColumnNames());
@@ -93,9 +94,9 @@ public class ParseFileSheet {
 			logger.fine("Db Name: " + thisParseSheet.getSheetName());
 
 			odb.setDataBaseName(thisParseSheet.getSheetName());
-			
+
 			return odb;
-			
+
 	}
 
 	public void parseInputFile(ParseSheet parseSheet, File inputReport) {
@@ -234,7 +235,7 @@ public class ParseFileSheet {
 						return multiRowMode;
 					}
 				}
-				
+
 				if (parseRule.getParseType().equalsIgnoreCase(
 						CommonNames.IGNORENEWPAGEUNTIL)
 						&& newPage == true) {
@@ -343,10 +344,38 @@ public class ParseFileSheet {
 					}
 
 				} else if (parseRule.getParseType().equalsIgnoreCase(
+						CommonNames.NEWNAMEDROWIF)) {
+					logger.fine(CommonNames.NEWNAMEDROWIF);
+					try {
+						// logger.severe(String.valueOf(reportLine.contains(parseRule.getMatchString())));
+						if (reportLine.contains(parseRule.getMatchString())) {
+							logger.severe("HI!!!!!");
+							// Ignore for now :|
+							namedRow = reportLine;
+							return multiRowMode;
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+						logger.severe("Exception Parsing NewNamedRowIf: "
+								+ parseRule.getMatchString() + e);
+					}
+
+				} else if (parseRule.getParseType().equalsIgnoreCase(
 						CommonNames.SELECTFIELDDATA)) {
 					logger.fine(CommonNames.SELECTFIELDDATA);
 					try {
 						OutputDataColumn outputDataCol= makeNewDataColumn(parseRule, reportLine);
+						addColumnToRow(outputDataCol);
+					} catch (Exception e) {
+						logger.severe("Could not write report line out!");
+						// return;
+					}
+				} else if (parseRule.getParseType().equalsIgnoreCase(
+						CommonNames.SELECTNAMEDROWFIELDDATA)) {
+					logger.fine(CommonNames.SELECTNAMEDROWFIELDDATA);
+					try {
+						logger.severe(namedRow);
+						OutputDataColumn outputDataCol= makeNewDataColumn(parseRule, namedRow);
 						addColumnToRow(outputDataCol);
 					} catch (Exception e) {
 						logger.severe("Could not write report line out!");
@@ -437,7 +466,7 @@ public class ParseFileSheet {
 		this.setParseSheetOutputDataRows(workColl);
 		// Indicate new Row not ready for writing.
 		nostartNewRow();
-		
+
 	}
 	/*
 	 * Start New Row
@@ -538,7 +567,7 @@ public class ParseFileSheet {
 	}
 
 	/*
-	 * Build a list of ColumnNames into SheetColumnNames that represent 
+	 * Build a list of ColumnNames into SheetColumnNames that represent
 	 * the output column names we desire.
 	 */
 	public void setColumnNames(ParseSheet parseSheet, OutputDataBean odb) {
@@ -553,6 +582,8 @@ public class ParseFileSheet {
 					CommonNames.SELECTFIELDDATA))
 					|| (parseRule.getParseType()
 							.equalsIgnoreCase(CommonNames.SELECTMULTIROWFIELDDATA))
+							|| (parseRule.getParseType()
+									.equalsIgnoreCase(CommonNames.SELECTNAMEDROWFIELDDATA))
 					|| (parseRule.getParseType()
 							.equalsIgnoreCase(CommonNames.SELECTALLDATA))
 							) {
@@ -560,11 +591,11 @@ public class ParseFileSheet {
 				workColl = getParseSheetColumnNames();
 				workColl.add(parseRule.getOutputFieldName());
 				this.setParseSheetColumnNames(workColl);
-				
+
 				logger.fine("Adding Col Name:"+parseRule.getOutputFieldName());
-				
+
 //				odb.getOutputDataColumnNames().add(parseRule.getOutputFieldName());
-				
+
 				// columnNames.add(parseRule.getOutputFieldName());
 			}
 		}
