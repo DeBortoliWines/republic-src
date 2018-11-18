@@ -347,8 +347,7 @@ public class ParseFileSheet {
 						CommonNames.NEWSAVEDROWIF)) {
 					logger.fine(CommonNames.NEWSAVEDROWIF);
 					try {
-						// logger.severe(String.valueOf(reportLine.contains(parseRule.getMatchString())));
-						if (reportLine.contains(parseRule.getMatchString())) {
+						if (ruleMatchesReportLine(parseRule, reportLine)) {
 							savedRow = reportLine;
 							return multiRowMode;
 						}

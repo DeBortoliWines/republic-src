@@ -24,7 +24,7 @@
         <parseRule>
 					<parse-type>NewSavedRowIf</parse-type>
 					<start-col>74</start-col>
-					<end-col>79</end-col>
+					<end-col>78</end-col>
 					<match-string>Attn:</match-string>
 				</parseRule>
         <parseRule>
