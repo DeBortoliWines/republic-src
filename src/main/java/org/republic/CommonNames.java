@@ -5,38 +5,40 @@ public class CommonNames {
 	APPNAME		= "Republic",
 	VERSION 	= "0.6";
 	static final int BUFFER = 2048;
-	
+
 	static final String IGNORELINEIF = "IgnoreLineIf";
 
 	static final String IGNOREPAGEROWS = "IgnorePageRows";
 	static final String IGNORENEWPAGEUNTIL = "IgnoreNewPageUntil";
-	
+
 	static final String SELECTFIELDDATA = "SelectFieldData";
 	static final String SELECTMULTIROWFIELDDATA = "SelectMultiRowFieldData";
-	static final String SELECTALLDATA = "SelectAllData";	
-	
+	static final String SELECTNAMEDROWFIELDDATA = "SelectNamedRowFieldData";
+	static final String SELECTALLDATA = "SelectAllData";
+
 	static final String NEWROWIF = "NewRowIf";
 	static final String NEWMULTIROWIF = "NewMultiRowIf";
+	static final String NEWNAMEDROWIF = "NewNamedRowIf";
 	static final String ALLDATAIF ="AllDataIf";
-	static final String ENDSHEETIF ="EndSheetIf";		
+	static final String ENDSHEETIF ="EndSheetIf";
 
 	static final String BLANK = "Blank";
 
 	static final String NOTBLANK = "NotBlank";
 
 	static final String ANY = "Any";
-	
+
 	static final String CONFIGDIR="src/conf/";
 	static final String SPREADSHEETTEMPLATESXC= "./Spreadsheets/template-sxc";
 	static final String SPREADSHEETTEMPLATEODS= "./Spreadsheets/template-ods";
 	static final String OUTFILE= "./TestData/OutputFile.xml";
 	 static final String OUTPUTRESULTS = "./TestData/OutputResults.xml";
 	 static final String PARSEPARAMETERS = "ParseParametersMapping.xml";
-	 
+
 	 static final String PARSEPARAMETERSLOCATION = CONFIGDIR+PARSEPARAMETERS;
 	 static final String OUTPUTDATAMAPPING = "OutputDataMapping.xml";
 	 static final String OUTPUTDATAMAPPINGLOCATION = CONFIGDIR+OUTPUTDATAMAPPING;
-	 
+
 	 static final String CONTENT2DATASXC = "content2Data-sxc.xsl";
 	 static final String DATA2CONTENTSXC = "data2Content-sxc.xsl";
 	 static final String DATA2CONTENTSXCLOCATION = CONFIGDIR+DATA2CONTENTSXC;
