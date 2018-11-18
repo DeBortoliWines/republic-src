@@ -62,7 +62,7 @@ public class ParseFileSheet {
 	private int multiRowMaxLines = -1;
 
 	private String multiRowReportLine[] = new String[200];
-	private String namedRow = new String();
+	private String savedRow = new String();
 
 	private boolean newPage = true;
 
@@ -344,19 +344,17 @@ public class ParseFileSheet {
 					}
 
 				} else if (parseRule.getParseType().equalsIgnoreCase(
-						CommonNames.NEWNAMEDROWIF)) {
-					logger.fine(CommonNames.NEWNAMEDROWIF);
+						CommonNames.NEWSAVEDROWIF)) {
+					logger.fine(CommonNames.NEWSAVEDROWIF);
 					try {
 						// logger.severe(String.valueOf(reportLine.contains(parseRule.getMatchString())));
 						if (reportLine.contains(parseRule.getMatchString())) {
-							logger.severe("HI!!!!!");
-							// Ignore for now :|
-							namedRow = reportLine;
+							savedRow = reportLine;
 							return multiRowMode;
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
-						logger.severe("Exception Parsing NewNamedRowIf: "
+						logger.severe("Exception Parsing NewSavedRowIf: "
 								+ parseRule.getMatchString() + e);
 					}
 
@@ -371,11 +369,10 @@ public class ParseFileSheet {
 						// return;
 					}
 				} else if (parseRule.getParseType().equalsIgnoreCase(
-						CommonNames.SELECTNAMEDROWFIELDDATA)) {
-					logger.fine(CommonNames.SELECTNAMEDROWFIELDDATA);
+						CommonNames.SELECTSAVEDROWFIELDDATA)) {
+					logger.fine(CommonNames.SELECTSAVEDROWFIELDDATA);
 					try {
-						logger.severe(namedRow);
-						OutputDataColumn outputDataCol= makeNewDataColumn(parseRule, namedRow);
+						OutputDataColumn outputDataCol= makeNewDataColumn(parseRule, savedRow);
 						addColumnToRow(outputDataCol);
 					} catch (Exception e) {
 						logger.severe("Could not write report line out!");
@@ -583,7 +580,7 @@ public class ParseFileSheet {
 					|| (parseRule.getParseType()
 							.equalsIgnoreCase(CommonNames.SELECTMULTIROWFIELDDATA))
 							|| (parseRule.getParseType()
-									.equalsIgnoreCase(CommonNames.SELECTNAMEDROWFIELDDATA))
+									.equalsIgnoreCase(CommonNames.SELECTSAVEDROWFIELDDATA))
 					|| (parseRule.getParseType()
 							.equalsIgnoreCase(CommonNames.SELECTALLDATA))
 							) {

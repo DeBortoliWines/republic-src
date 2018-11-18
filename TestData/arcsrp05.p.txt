@@ -1,0 +1,112 @@
+arcsrp05.p 1+                                    27.18 AR AGING AS OF EFFECTIVE DATE                                  Date: 14/11/18
+Page:    1                                            TEST 2014 CLONED:13/11/18                                       Time: 14:37:59
+
+                                            Reporting Currency:   AUD
+                                            Exchange Rate:        AUD 1.0 = AUD 1.0
+
+
+
+                                               Dn  Less Than   30     Over   30       Over   60       Over   90
+Ref      T Eff Date Due Date Inv Date Cr Terms Lv     Days Old        Days Old        Days Old        Days Old       Total Amount
+-------- - -------- -------- -------- -------- -- --------------- --------------- --------------- --------------- ----------------
+
+2ALM999  ALM NSW REBATE ACCOUNT       State: NSW  Last Payment: 05/10/18 Attn:                          Tel:
+
+N3206918 I 31/10/18 01/12/18 31/10/18 AR30              -2,954.94            0.00            0.00            0.00        -2,954.94
+N3207804 I 02/11/18 31/12/18 02/11/18 AR30                -880.54            0.00            0.00            0.00          -880.54
+N3207916 I 02/11/18 31/12/18 02/11/18 AR30              -6,427.63            0.00            0.00            0.00        -6,427.63
+N3207934 I 02/11/18 31/12/18 02/11/18 AR30                 -46.45            0.00            0.00            0.00           -46.45
+N3207943 I 02/11/18 31/12/18 02/11/18 AR30              -6,225.10            0.00            0.00            0.00        -6,225.10
+N3207946 I 02/11/18 31/12/18 02/11/18 AR30                -407.10            0.00            0.00            0.00          -407.10
+N3207952 I 02/11/18 31/12/18 02/11/18 AR30              -1,045.87            0.00            0.00            0.00        -1,045.87
+N3207953 I 02/11/18 31/12/18 02/11/18 AR30                -151.41            0.00            0.00            0.00          -151.41
+N3208189 I 05/11/18 31/12/18 05/11/18 AR30              -3,948.29            0.00            0.00            0.00        -3,948.29
+N3208203 I 05/11/18 31/12/18 05/11/18 AR30              -1,036.61            0.00            0.00            0.00        -1,036.61
+N3208621 I 06/11/18 31/12/18 06/11/18 AR30              -8,789.63            0.00            0.00            0.00        -8,789.63
+N3208713 I 06/11/18 31/12/18 06/11/18 AR30              -7,464.48            0.00            0.00            0.00        -7,464.48
+N3208719 I 06/11/18 31/12/18 06/11/18 AR30                -855.45            0.00            0.00            0.00          -855.45
+N3208735 I 06/11/18 31/12/18 06/11/18 AR30              -1,367.54            0.00            0.00            0.00        -1,367.54
+N3208736 I 06/11/18 31/12/18 06/11/18 AR30                -277.62            0.00            0.00            0.00          -277.62
+                                                  --------------- --------------- --------------- --------------- ----------------
+    AUD    Customer                    Totals:         -41,878.66            0.00            0.00            0.00       -41,878.66
+
+2ALM777  ALM NSW WET EFF REBATE       State: NSW  Last Payment: 07/11/18 Attn:                          Tel:
+
+538358   U 19/10/18 05/10/18 05/10/18                        0.00           -6.60            0.00            0.00            -6.60
+CL051126 M 19/10/18 19/10/18 19/10/18                    1,650.00            0.00            0.00            0.00         1,650.00
+                                                  --------------- --------------- --------------- --------------- ----------------
+    AUD    Customer                    Totals:           1,650.00           -6.60            0.00            0.00         1,643.40
+
+2ama001  Amatos Liquor                State: NSW  Last Payment: 06/11/18 Attn: frank a/c Louise         Tel: 9560-7628
+
+N3190548 I 04/09/18 31/10/18 04/09/18 AR30                 441.77            0.00            0.00            0.00           441.77
+N3194369 I 18/09/18 31/10/18 18/09/18 AR30               2,360.34            0.00            0.00            0.00         2,360.34
+N3195122 I 19/09/18 31/10/18 19/09/18 AR30               3,307.76            0.00            0.00            0.00         3,307.76
+N3196465 I 25/09/18 31/10/18 25/09/18 AR30                 323.25            0.00            0.00            0.00           323.25
+N3198802 I 03/10/18 01/12/18 03/10/18 AR30               2,508.24            0.00            0.00            0.00         2,508.24
+N3201008 I 11/10/18 01/12/18 11/10/18 AR30               1,619.31            0.00            0.00            0.00         1,619.31
+N3201388 I 12/10/18 01/12/18 12/10/18 AR30                 226.75            0.00            0.00            0.00           226.75
+N3208720 I 06/11/18 31/12/18 06/11/18 AR30               4,531.97            0.00            0.00            0.00         4,531.97
+N3209452 I 08/11/18 31/12/18 08/11/18 AR30               1,513.93            0.00            0.00            0.00         1,513.93
+                                                  --------------- --------------- --------------- --------------- ----------------
+    AUD    Customer                    Totals:          16,833.32            0.00            0.00            0.00        16,833.32
+
+2AMO000  Amory Catering               State: NSW  Last Payment: 23/08/18 Attn: Carolyn Powell           Tel: 02 9634 4000
+
+N3206316 I 30/10/18 01/12/18 30/10/18 ar30                 607.89            0.00            0.00            0.00           607.89
+                                                  --------------- --------------- --------------- --------------- ----------------
+    AUD    Customer                    Totals:             607.89            0.00            0.00            0.00           607.89
+arcsrp05.p 1+                                    27.18 AR AGING AS OF EFFECTIVE DATE                                  Date: 14/11/18
+Page:    2                                            TEST 2014 CLONED:13/11/18                                       Time: 14:37:59
+
+                                            Reporting Currency:   AUD
+                                            Exchange Rate:        AUD 1.0 = AUD 1.0
+
+
+
+                                               Dn  Less Than   30     Over   30       Over   60       Over   90
+Ref      T Eff Date Due Date Inv Date Cr Terms Lv     Days Old        Days Old        Days Old        Days Old       Total Amount
+-------- - -------- -------- -------- -------- -- --------------- --------------- --------------- --------------- ----------------
+                                                  --------------- --------------- --------------- --------------- ----------------
+    AUD    Report                      Totals:         -22,787.45           -6.60            0.00            0.00       -22,794.05
+
+
+
+
+                         Invoices:         -24,437.45
+                      Dr/Cr Memos:           1,650.00
+                  Finance Charges:               0.00
+               Unapplied Payments:              -6.60
+                           Drafts:               0.00
+                  Total AUD Aging:         -22,794.05
+  Aging at 14/11/18 Exchange Rate:         -22,794.05
+     Variance of 14/11/18 to Base:               0.00
+
+
+                                                           End of Report
+arcsrp05.p 1+                                    27.18 AR AGING AS OF EFFECTIVE DATE                                  Date: 14/11/18
+Page:    3                                            TEST 2014 CLONED:13/11/18                                       Time: 14:37:59
+
+
+
+
+Report Criteria:                        Report Submitted By:       smahlkne
+
+       Bill To: 2ALM777                       To: 2AMO000
+ Customer Type:                               To:
+     Reference:                               To:
+   Salesperson:                               To:
+       Account:                               To:
+   Sub-Account:                               To:
+   Cost Center:                               To:
+        Entity:                               To:
+     List Type:
+Age by Date (Due,Eff,Inv): Due             Show Customer PO: No
+           Effective Date: 14/11/18     Show Payment Detail: No
+           Summary/Detail: Detail     Show Invoice Comments: No
+                 Currency:             Show Master Comments: No
+       Reporting Currency: AUD                         Type: AR
+                                                   Language:
+    Column Days: 30         [2]: 60         [3]: 90          Output: mrtest
+                                                           Batch ID:
+

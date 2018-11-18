@@ -13,12 +13,12 @@ public class CommonNames {
 
 	static final String SELECTFIELDDATA = "SelectFieldData";
 	static final String SELECTMULTIROWFIELDDATA = "SelectMultiRowFieldData";
-	static final String SELECTNAMEDROWFIELDDATA = "SelectNamedRowFieldData";
+	static final String SELECTSAVEDROWFIELDDATA = "SelectSavedRowFieldData";
 	static final String SELECTALLDATA = "SelectAllData";
 
 	static final String NEWROWIF = "NewRowIf";
 	static final String NEWMULTIROWIF = "NewMultiRowIf";
-	static final String NEWNAMEDROWIF = "NewNamedRowIf";
+	static final String NEWSAVEDROWIF = "NewSavedRowIf";
 	static final String ALLDATAIF ="AllDataIf";
 	static final String ENDSHEETIF ="EndSheetIf";
 
