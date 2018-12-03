@@ -97,16 +97,6 @@ How republic parses your reports is determined by the parseParameters.xml file. 
 | 5     | `<output-field-type>` | Denotes the field type to give a column of parsed data. Options are: currency, date, percentage, number, string.                                                                              |
 | 5     | `<match-string>`      | Denotes for some parse-types the string that must be matched. Special Values are: Blank, NotBlank, Any other values are treated as exact matches.                                             |
 
-## Parsing Strategies
-
-There are currently three main parsing strategies you may utilise to extract data from a report into a spreadsheet via Republic.
-
-1. SingleRow. NewRowIf.
-2. MultiRow. NewMultiRowIf.
-3. AllData. AllDataIf.
-
-Which ever strategy you pick is really the only one you can easily use for that output sheet. Using multiple strategies will really confuse the parser!
-
 ## Parsing Types
 
 These are instructions that can be given to the parser to help you get the data into the right columns and to strip useless rows of data.
@@ -124,4 +114,12 @@ These are instructions that can be given to the parser to help you get the data 
 | NewSavedRowIf           | If matched, it saves the most recent row for reference via the `<SelectSavedRowFieldData>` type.                                                                                                                                                                                    |
 | SelectSavedRowFieldData | Selects all data between `<start-col>` and `<end-col>` from the last matched `NewSavedRowIf`.                                                                                                                                                                                       |
 
------------------------------
+## Parsing Strategies
+
+There are currently three main parsing strategies you may utilise to extract data from a report into a spreadsheet via Republic.
+
+1. SingleRow. NewRowIf.
+2. MultiRow. NewMultiRowIf.
+3. AllData. AllDataIf.
+
+Which ever strategy you pick is really the only one you can easily use for that output sheet. Using multiple strategies will really confuse the parser!
