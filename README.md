@@ -123,3 +123,5 @@ These are instructions that can be given to the parser to help you get the data 
 | SelectAllData           | Select all data from `<start-col>` to `<end-col>` into col 1 of the output sheet. This is useful for dumping the whole report to col1 of the spreadsheet and manually parsing or using it for a reference.                                                                          |
 | NewSavedRowIf           | If matched, it saves the most recent row for reference via the `<SelectSavedRowFieldData>` type.                                                                                                                                                                                    |
 | SelectSavedRowFieldData | Selects all data between `<start-col>` and `<end-col>` from the last matched `NewSavedRowIf`.                                                                                                                                                                                       |
+
+-----------------------------
