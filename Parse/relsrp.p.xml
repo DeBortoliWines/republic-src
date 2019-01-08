@@ -86,7 +86,7 @@
      <start-row>5</start-row>
      <end-row>5</end-row>
      <output-field-name>Qty Sched</output-field-name>
-     <output-field-type>currency</output-field-type>
+     <output-field-type>number</output-field-type>
     </parseRule> 
     <parseRule>
      <parse-type>SelectMultiRowFieldData</parse-type>
@@ -95,7 +95,7 @@
      <start-row>5</start-row>
      <end-row>5</end-row>
      <output-field-name>Qty Comp</output-field-name>
-     <output-field-type>currency</output-field-type>
+     <output-field-type>number</output-field-type>
     </parseRule> 
     <parseRule>
      <parse-type>SelectMultiRowFieldData</parse-type>
@@ -104,7 +104,7 @@
      <start-row>5</start-row>
      <end-row>5</end-row>
      <output-field-name>Open</output-field-name>
-     <output-field-type>currency</output-field-type>
+     <output-field-type>number</output-field-type>
     </parseRule>     
    </parseRules>
   </parseSheet>

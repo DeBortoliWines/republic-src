@@ -118,7 +118,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Qty on Hand</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>	
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -127,7 +127,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Qty Allocated</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>		
 	
 	<!-- end parse rule -->

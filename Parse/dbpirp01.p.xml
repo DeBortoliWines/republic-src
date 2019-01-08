@@ -128,7 +128,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>List Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -137,7 +137,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Min. Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	
 	<parseRule>
@@ -147,7 +147,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Max. Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -201,7 +201,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Alt UM List Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<!-- end parse rule -->
       </parseRules>

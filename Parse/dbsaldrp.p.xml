@@ -109,7 +109,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Default List Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -118,7 +118,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>SO List Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -127,7 +127,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Extra Disc ($)</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -136,7 +136,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Default Disc ($)</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -145,7 +145,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Manual Disc ($)</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -154,7 +154,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Invoice Qty</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -172,7 +172,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Net Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -181,7 +181,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Extended Def Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -190,7 +190,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Extended Net Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -199,7 +199,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Extended COGS</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -208,7 +208,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Total Disc ($)</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -217,7 +217,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Total Disc ($)</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>

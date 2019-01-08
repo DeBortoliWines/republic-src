@@ -2,7 +2,7 @@
 <!--
 ***************************************************************************
 ** Program:      dbreppr1.p.xml
-** Description:  Parse for the program dbreppr1 18.20.2 
+** Description:  Parse for the program dbreppr1 18.20.2
 **  Date     Author Notes
 ** ========================================================================
 ** 05/05/05 GB     Generate the parse
@@ -65,7 +65,7 @@
 	  <end-row>1</end-row>
 	  <output-field-name>Name</output-field-name>
 	  <output-field-type>string</output-field-type>
-	</parseRule>	
+	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
 	  <start-col>48</start-col>
@@ -83,7 +83,7 @@
 	  <end-row>1</end-row>
 	  <output-field-name>Telephone</output-field-name>
 	  <output-field-type>string</output-field-type>
-	</parseRule>	
+	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
 	  <start-col>86</start-col>
@@ -91,7 +91,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Deferred</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -100,7 +100,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Current</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -109,7 +109,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>30 Days</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -118,7 +118,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>60 Days</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -127,8 +127,8 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>90 Days</output-field-name>
-	  <output-field-type>currency</output-field-type>
-	</parseRule>	
+	  <output-field-type>number</output-field-type>
+	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
 	  <start-col>161</start-col>
@@ -136,7 +136,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>120 Days</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -145,7 +145,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>150 Days</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -154,7 +154,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Balance</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -164,7 +164,7 @@
 	  <end-row>1</end-row>
 	  <output-field-name>Last Pay</output-field-name>
 	  <output-field-type>date</output-field-type>
-	</parseRule>	
+	</parseRule>
 	<!-- end parse rule -->
       </parseRules>
     </parseSheet>
@@ -192,4 +192,3 @@
     </parseSheet>
   </parseSheets>
 </parse-parameters>
-  

@@ -75,7 +75,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>MTD Cartons</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -84,7 +84,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>LY MTD Cartons</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>	
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -93,7 +93,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>MTD Ctn Var</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>	
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -102,7 +102,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>MTD Sales</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>		
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -111,7 +111,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>LY MTD Sales</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -120,7 +120,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>MTD $ Var</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -129,7 +129,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>YTD Cartons</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -138,7 +138,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>LY YTD Cartons</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -147,7 +147,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>YTD Ctn Var</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -156,7 +156,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>YTD Sales</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -165,7 +165,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>LY YTD Sales</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -174,7 +174,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>YTD $Var</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<!-- end parse rule -->
       </parseRules>

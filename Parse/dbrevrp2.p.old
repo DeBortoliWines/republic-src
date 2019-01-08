@@ -166,7 +166,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Qty Issued</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -175,7 +175,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Frozen BOM Expl</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -184,7 +184,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Issued vs Frozen BOM Qty Var</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -193,7 +193,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Material Var %</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -202,7 +202,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Frozen Std Cost</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -211,7 +211,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Issued vs Frozen Var @ Fzn Std</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<!-- end parse rule -->
       </parseRules>

@@ -154,7 +154,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Cartons Shipped</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -163,7 +163,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Non-Ctn units Shipped</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>	
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -181,7 +181,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -190,7 +190,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Extended Price</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
 	<parseRule>
 	  <parse-type>SelectFieldData</parse-type>
@@ -199,7 +199,7 @@
 	  <start-row>1</start-row>
 	  <end-row>1</end-row>
 	  <output-field-name>Extended COGS</output-field-name>
-	  <output-field-type>currency</output-field-type>
+	  <output-field-type>number</output-field-type>
 	</parseRule>
         <parseRule>
 	  <parse-type>SelectFieldData</parse-type>
