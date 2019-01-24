@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if (( $# != 1 )); then
+if (( $# != 2 )); then
     echo "Incorrect parameters fed to Republic (we need 2)";
     echo "\$1 = INPUT_REPORT";
     echo "\$2 = INPORT_REPORT_SPEC";
@@ -15,6 +15,6 @@ OUTPUT_REPORT=$(mktemp);
 /usr/bin/java -jar $REPUBLIC \
   $INPUT_REPORT \
   $OUTPUT_REPORT \
-  $OUTPUT_REPORT > /dev/null 2>&1
+  $INPUT_REPORT_SPEC > /dev/null 2>&1
 
 cat $OUTPUT_REPORT
