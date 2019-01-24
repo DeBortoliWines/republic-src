@@ -45,11 +45,17 @@
     <defaultGoal>package</defaultGoal>
     <plugins>
         <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
+            <artifactId>maven-assembly-plugin</artifactId>
             <configuration>
-            <excludes>
-                 <exclude>**/*Test*.java</exclude>
-            </excludes>
+							<archive>
+									<manifest>
+											<addClasspath>true</addClasspath>
+											<mainClass>org.republic.Start</mainClass>
+									</manifest>
+							</archive>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
             </configuration>
         </plugin>
     </plugins>
