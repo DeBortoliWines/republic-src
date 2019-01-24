@@ -128,6 +128,10 @@ These are instructions that can be given to the parser to help you get the data 
 
 # Building - Ben's notes
 
+You'll need to install `maven` and a Java SDK. You'll also probably need to setup a maven to use our proxy (well documented online).
+
 Build republic and bundle all dependencies (this will create `target/republic-VERSION-jar-with-dependencies.jar`):
 
-`$ mvn assembly:single`
+`$ mvn clean compile assembly:single`
+
+You then need to update the `dist` directory with this new jar and probably update the `republic.sh` script as well.

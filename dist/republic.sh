@@ -1,10 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-TMPFILE=$(mktemp);
+if (( $# != 1 )); then
+    echo "Incorrect parameters fed to Republic (we need 2)";
+    echo "\$1 = INPUT_REPORT";
+    echo "\$2 = INPORT_REPORT_SPEC";
+    exit 1;
+fi
 
-/usr/bin/java -jar $(dirname $0)/republic-0.6.6-jar-with-dependencies.jar \
-  /home/bletchfo/repos/dbw/republic/TestData/arcsrp05.p.txt \
-  $TMPFILE \
-  /home/bletchfo/repos/dbw/republic/Parse/arcsrp05.p.xml > /dev/null 2>&1
+REPUBLIC=$(dirname $0)/republic.jar;
+INPUT_REPORT=$1;
+INPUT_REPORT_SPEC=$2;
+OUTPUT_REPORT=$(mktemp);
 
-cat $TMPFILE
+/usr/bin/java -jar $REPUBLIC \
+  $INPUT_REPORT \
+  $OUTPUT_REPORT \
+  $OUTPUT_REPORT > /dev/null 2>&1
+
+cat $OUTPUT_REPORT
