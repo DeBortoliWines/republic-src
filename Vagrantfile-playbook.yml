@@ -1,5 +1,0 @@
-- hosts: all
-
-  roles:
-    - .ansible-galaxy-roles/ansible-set-proxy-from-env
-    - .ansible-galaxy-roles/ansible-clone-env-vars
