@@ -1,17 +1,31 @@
-README FIRST
+# republic-src
+
+This repository only contains the source for republic. Please see the `republic` repository for the actual runnable republic environment and helper scripts.
+
+# Building - Ben's notes
+
+You'll need to install `maven` and a Java SDK. You'll also probably need to setup a maven to use our proxy (well documented online).
+
+Build republic and bundle all dependencies (this will create `target/republic-VERSION-jar-with-dependencies.jar`):
+
+`$ mvn clean compile assembly:single`
+
+You will then need to update the `republic` repository with this new jar.
+
+-----------------------------
+
+# Legacy Documentation (majority still relevant)
 
 CHANGES
 =======
-v0.2 (minor changes - split of main parser to diff objects)
-v0.3 (multiRow parsing to one spreadsheet row)
-v0.4 (more parsing options - see runExample3.sh)
-v0.5 - More parsing improvements,
-     - Ability to parse the same report into multiple sheets
-     within an OO worksheet.
-     - Shellscript provided by DeBortoli Wines to take a report file
-     and match it to a parsing parameter file, parse then store the
-     result. Thank you Gleny Baca and Bill Robertson.
-v0.6 - Configured for OO Documents v2.0
+* v0.2 (minor changes - split of main parser to diff objects)
+* v0.3 (multiRow parsing to one spreadsheet row)
+* v0.4 (more parsing options - see runExample3.sh)
+* v0.5 - More parsing improvements, Ability to parse the same report into multiple sheets
+within an OO worksheet. Shellscript provided by DeBortoli Wines to take a report file
+and match it to a parsing parameter file, parse then store the
+result. Thank you Gleny Baca and Bill Robertson.
+* v0.6 - Configured for OO Documents v2.0
 
 If you've found this application to be worthwhile, why not sponsor some of the
 development effort... http://www.sf.net/projects/republic
@@ -123,15 +137,3 @@ These are instructions that can be given to the parser to help you get the data 
 | SelectAllData           | Select all data from `<start-col>` to `<end-col>` into col 1 of the output sheet. This is useful for dumping the whole report to col1 of the spreadsheet and manually parsing or using it for a reference.                                                                          |
 | NewSavedRowIf           | If matched, it saves the most recent row for reference via the `<SelectSavedRowFieldData>` type.                                                                                                                                                                                    |
 | SelectSavedRowFieldData | Selects all data between `<start-col>` and `<end-col>` from the last matched `NewSavedRowIf`.                                                                                                                                                                                       |
-
------------------------------
-
-# Building - Ben's notes
-
-You'll need to install `maven` and a Java SDK. You'll also probably need to setup a maven to use our proxy (well documented online).
-
-Build republic and bundle all dependencies (this will create `target/republic-VERSION-jar-with-dependencies.jar`):
-
-`$ mvn clean compile assembly:single`
-
-You then need to update the `dist` directory with this new jar and probably update the `republic.sh` script as well.
