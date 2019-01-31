@@ -17,12 +17,15 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Arrays;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
+import java.util.zip.Deflater;
+import java.util.zip.CRC32;
 
 import org.jdom.Attribute;
 import org.jdom.Document;
@@ -918,11 +921,10 @@ getting this:
 	public static void zipDirectory(String dir2zip, String endFilename)
 			throws Exception {
 
-		ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(
-				endFilename));
+		ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(endFilename));
+
 		zipDirectory(dir2zip, dir2zip, zos);
 		zos.close();
-
 	}
 
 	public static void zipDirectory(String parentDir, String dir2zip,
@@ -935,6 +937,14 @@ getting this:
 			String[] dirList = zipDir.list();
 			byte[] readBuffer = new byte[2156];
 			int bytesIn = 0;
+
+			int indexOfMimeType = Arrays.asList(dirList).indexOf("mimetype");
+			if(indexOfMimeType != -1) {
+				String temp = dirList[0];
+				dirList[0] = dirList[indexOfMimeType];
+				dirList[indexOfMimeType] = temp;
+			}
+
 			// loop through dirList, and zip the files
 			for (int i = 0; i < dirList.length; i++) {
 				File f = new File(zipDir, dirList[i]);
@@ -955,12 +965,30 @@ getting this:
 				String zippath = f.getAbsolutePath().substring(
 						new File(parentDir).getAbsolutePath().length() + 1);
 				ZipEntry anEntry = new ZipEntry(zippath);
-				// place the zip entry in the ZipOutputStream object
-				zos.putNextEntry(anEntry);
-				// now write the content of the file to the ZipOutputStream
-				while ((bytesIn = fis.read(readBuffer)) != -1) {
-					zos.write(readBuffer, 0, bytesIn);
+
+				byte[] bytes = new byte[(int) f.length()];
+				fis.read(bytes);
+
+				if (dirList[i].equals("mimetype")) {
+					CRC32 crc = new CRC32();
+					crc.reset();
+					crc.update(bytes);
+
+					anEntry.setSize(bytes.length);
+					anEntry.setCompressedSize(bytes.length);
+					anEntry.setCrc(crc.getValue());
+
+					zos.setMethod(ZipOutputStream.STORED);
+					zos.setLevel(Deflater.NO_COMPRESSION);
+				} else {
+					zos.setMethod(ZipOutputStream.DEFLATED);
+					zos.setLevel(Deflater.DEFAULT_COMPRESSION);
 				}
+
+				zos.putNextEntry(anEntry);
+
+				zos.write(bytes);
+				zos.closeEntry();
 				// close the Stream
 				fis.close();
 			}
