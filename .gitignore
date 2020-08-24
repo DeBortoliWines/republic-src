@@ -1,5 +1,11 @@
 *.log
 *.vagrant
+Vagrantfile
 *.retry
 *.ansible-galaxy-roles
-target/
+target
+republic
+.DS_Store
+.classpath
+.project
+.settings/
