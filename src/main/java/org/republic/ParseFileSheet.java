@@ -62,7 +62,10 @@ public class ParseFileSheet {
 	private int multiRowMaxLines = -1;
 
 	private String multiRowReportLine[] = new String[200];
+	private String savedMultiRowReportLine[] = new String[200];
 	private String savedRow = new String();
+
+	private String multiRowType = null;
 
 	private boolean newPage = true;
 
@@ -250,26 +253,45 @@ public class ParseFileSheet {
 						return multiRowMode;
 					}
 				} else {
-					// We have another multi-row!!!
-					int line = getMultiRowLine();
-					line++;
-					setMultiRowLine(line);
-					logger.fine("MultiRow to Buffer:" + getMultiRowLine()
-							+ reportLine);
-					multiRowReportLine[line] = new String(reportLine);
-
-					logger.fine("Stored Value is :" + multiRowReportLine[line]);
-					if (getMultiRowLine() >= getMultiRowMaxLines()) {
-						logger.fine("About to process the buffer, lines:"
-								+ getMultiRowLine() + " max lines >= "
-								+ getMultiRowMaxLines());
-						// Now we have the multi-row details, look for parse
-						// rules
-						// to create data.
-						loadMultiRows(parseSheet);
-						return false;
+					if(multiRowType.equalsIgnoreCase(CommonNames.NEWMULTIROWIF)) {
+						// We have another multi-row!!!
+						int line = getMultiRowLine();
+						line++;
+						setMultiRowLine(line);
+						logger.fine("MultiRow to Buffer:" + getMultiRowLine()
+								+ reportLine);
+						multiRowReportLine[line] = new String(reportLine);
+	
+						logger.fine("Stored Value is :" + multiRowReportLine[line]);
+						if (getMultiRowLine() >= getMultiRowMaxLines()) {
+							logger.fine("About to process the buffer, lines:"
+									+ getMultiRowLine() + " max lines >= "
+									+ getMultiRowMaxLines());
+							// Now we have the multi-row details, look for parse
+							// rules
+							// to create data.
+							loadMultiRows(parseSheet);
+							return false;
+						}
+						return multiRowMode;
+					} else if(multiRowType.equalsIgnoreCase(CommonNames.NEWSAVEDMULTIROWIF)) {
+						// We have another saved-multi-row!!!
+						int line = getMultiRowLine();
+						line++;
+						setMultiRowLine(line);
+						logger.fine("MultiRow to Buffer:" + getMultiRowLine()
+								+ reportLine);
+						savedMultiRowReportLine[line] = new String(reportLine);
+	
+						logger.fine("Stored Value is :" + savedMultiRowReportLine[line]);
+						if (getMultiRowLine() >= getMultiRowMaxLines()) {
+							logger.fine("About to process the buffer, lines:"
+									+ getMultiRowLine() + " max lines >= "
+									+ getMultiRowMaxLines());
+							return false;
+						}
+						return multiRowMode;
 					}
-					return multiRowMode;
 				}
 			} else {
 				if (parseRule.getParseType().equalsIgnoreCase(
@@ -383,6 +405,17 @@ public class ParseFileSheet {
 							+ " ignoring rule!");
 					// ignore except when buffering multi-row..
 				} else if (parseRule.getParseType().equalsIgnoreCase(
+						CommonNames.SELECTSAVEDMULTIROWFIELDDATA)) {
+					if(savedMultiRowReportLine[parseRule.getRowIndex()] != null) {
+						try {
+							OutputDataColumn outputDataCol= makeNewDataColumn(parseRule, savedMultiRowReportLine[parseRule.getRowIndex()]);
+							addColumnToRow(outputDataCol);
+						} catch (Exception e) {
+							logger.severe("Could not write report line out!");
+							// return;
+						}
+					}
+				} else if (parseRule.getParseType().equalsIgnoreCase(
 						CommonNames.NEWMULTIROWIF)) {
 					if (ruleMatchesReportLine(parseRule, reportLine)) {
 						logger.fine("newMultiRowif triggered for line: "
@@ -397,9 +430,30 @@ public class ParseFileSheet {
 								.info("MultiRowMaxLines:"
 										+ parseRule.getEndRow());
 						setMultiRowMaxLines(parseRule.getEndRow());
+
+						multiRowType = CommonNames.NEWMULTIROWIF;
 						return true;
 					}
 				} else if (parseRule.getParseType().equalsIgnoreCase(
+					CommonNames.NEWSAVEDMULTIROWIF)) {
+				if (ruleMatchesReportLine(parseRule, reportLine)) {
+					logger.fine("newSavedMultiRowif triggered for line: "
+							+ reportLine);
+					// set MultiRow # to 0., create first line. expect to
+					// iterate the next X valid lines.
+					setMultiRowLine(1);
+					savedMultiRowReportLine = new String[200];
+					savedMultiRowReportLine[1] = reportLine;
+					// Also record how many lines to load.
+					logger
+							.info("SavedMultiRowMaxLines:"
+									+ parseRule.getEndRow());
+					setMultiRowMaxLines(parseRule.getEndRow());
+
+					multiRowType = CommonNames.NEWSAVEDMULTIROWIF;
+					return true;
+				}
+			} else if (parseRule.getParseType().equalsIgnoreCase(
 						CommonNames.SELECTALLDATA)
 						&& allDataMode) {
 					logger.fine(CommonNames.SELECTALLDATA);
@@ -578,6 +632,8 @@ public class ParseFileSheet {
 					CommonNames.SELECTFIELDDATA))
 					|| (parseRule.getParseType()
 							.equalsIgnoreCase(CommonNames.SELECTMULTIROWFIELDDATA))
+						|| (parseRule.getParseType()
+							.equalsIgnoreCase(CommonNames.SELECTSAVEDMULTIROWFIELDDATA))
 							|| (parseRule.getParseType()
 									.equalsIgnoreCase(CommonNames.SELECTSAVEDROWFIELDDATA))
 					|| (parseRule.getParseType()

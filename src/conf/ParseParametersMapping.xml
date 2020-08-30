@@ -11,6 +11,7 @@
 	        <field name="endCol" type="int" node="element"/>
 	        <field name="startRow" type="int" node="element"/>
 	        <field name="endRow" type="int" node="element"/>
+	        <field name="rowIndex" type="int" node="element"/>
 	        <field name="outputFieldName" type="string" />
 	        <field name="outputFieldType" type="string" />
 	</class>

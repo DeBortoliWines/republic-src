@@ -21,6 +21,7 @@ public class ParseRule{
 	int endCol;
 	int startRow;
 	int endRow;
+	int rowIndex;
 	//int outputColumnNumber;
 	String outputFieldName;
 	String outputFieldType; // String, Currency
@@ -51,6 +52,21 @@ public class ParseRule{
 	public void setEndRow(int endRow) {
 		this.endRow = endRow;
 	}
+
+	/**
+	 * @return Returns the rowIndex.
+	 */
+	public int getRowIndex() {
+		return rowIndex;
+	}
+
+	/**
+	 * @param rowIndex The rowIndex to set.
+	 */
+	public void setRowIndex(int rowIndex) {
+		this.rowIndex = rowIndex;
+	}
+
 
 	/**
 	 * @return Returns the matchString.
