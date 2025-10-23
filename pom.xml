@@ -40,10 +40,24 @@
 			<artifactId>jaxen</artifactId>
 			<version>1.1-beta-8</version>
 		</dependency>
+        <dependency>
+            <groupId>com.github.jferard</groupId>
+            <artifactId>fastods</artifactId>
+            <version>0.8.1</version>
+        </dependency>
 	</dependencies>
 	<build>
     <defaultGoal>package</defaultGoal>
     <plugins>
+           <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version> <!-- Use a recent version of the compiler plugin -->
+            <configuration>
+                <source>8</source>
+                <target>8</target>
+            </configuration>
+        </plugin>
         <plugin>
             <artifactId>maven-assembly-plugin</artifactId>
             <configuration>

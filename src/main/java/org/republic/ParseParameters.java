@@ -18,7 +18,7 @@ public class ParseParameters {
 	String reportType;
 	
 	//Collection parseRules;
-	Collection parseSheets;
+	Collection<ParseSheet> parseSheets;
 
 // Changed to part of ParseRules..	String startDataLine;
 
@@ -100,13 +100,13 @@ public class ParseParameters {
 	/**
 	 * @return Returns the parseSheets.
 	 */
-	public Collection getParseSheets() {
+	public Collection<ParseSheet> getParseSheets() {
 		return parseSheets;
 	}
 	/**
 	 * @param parseSheets The parseSheets to set.
 	 */
-	public void setParseSheets(Collection parseSheets) {
+	public void setParseSheets(Collection<ParseSheet> parseSheets) {
 		this.parseSheets = parseSheets;
 	}
 }

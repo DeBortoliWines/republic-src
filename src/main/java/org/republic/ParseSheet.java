@@ -17,19 +17,19 @@ import java.util.Collection;
  */
 public class ParseSheet{
 	private String sheetName;
-	private Collection parseRules;
+	private Collection<ParseRule> parseRules;
 	
 
 	/**
 	 * @return Returns the parseRules.
 	 */
-	public Collection getParseRules() {
+	public Collection<ParseRule> getParseRules() {
 		return parseRules;
 	}
 	/**
 	 * @param parseRules The parseRules to set.
 	 */
-	public void setParseRules(Collection parseRules) {
+	public void setParseRules(Collection<ParseRule> parseRules) {
 		this.parseRules = parseRules;
 	}
 	/**

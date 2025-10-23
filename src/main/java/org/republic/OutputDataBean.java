@@ -17,8 +17,8 @@ import java.util.Collection;
 public class OutputDataBean 
 {
 	private String dataBaseName;
-	public Collection outputDataColumnNames;
-	public Collection outputDataRows;
+	public Collection<String> outputDataColumnNames;
+	public Collection<OutputDataRow> outputDataRows;
 	
 	/**
 	 * @return Returns the dataBaseName.
@@ -37,28 +37,28 @@ public class OutputDataBean
 	/**
 	 * @return Returns the outputDataRows.
 	 */
-	public Collection getOutputDataRows() {
+	public Collection<OutputDataRow> getOutputDataRows() {
 		return outputDataRows;
 	}
 
 	/**
 	 * @param outputDataRows The outputDataRows to set.
 	 */
-	public void setOutputDataRows(Collection outputDataRows) {
+	public void setOutputDataRows(Collection<OutputDataRow> outputDataRows) {
 		this.outputDataRows = outputDataRows;
 	}
 
 	/**
 	 * @return Returns the outputDataColumnNames.
 	 */
-	public Collection getOutputDataColumnNames() {
+	public Collection<String> getOutputDataColumnNames() {
 		return outputDataColumnNames;
 	}
 
 	/**
 	 * @param outputDataColumnNames The outputDataColumnNames to set.
 	 */
-	public void setOutputDataColumnNames(Collection outputDataColumnNames) {
+	public void setOutputDataColumnNames(Collection<String> outputDataColumnNames) {
 		this.outputDataColumnNames = outputDataColumnNames;
 	}
 

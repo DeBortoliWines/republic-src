@@ -16,19 +16,19 @@ import java.util.Collection;
  */
 public class OutputDataRow {
 	
-	public Collection outputDataColumns;
+	public Collection<OutputDataColumn> outputDataColumns;
 		
 	/**
 	 * @return Returns the outputDataColumn.
 	 */
-	public Collection getOutputDataColumns() {
+	public Collection<OutputDataColumn> getOutputDataColumns() {
 		return outputDataColumns;
 	}
 
 	/**
 	 * @param outputDataColumn The outputDataColumn to set.
 	 */
-	public void setOutputDataColumns(Collection outputDataColumns) {
+	public void setOutputDataColumns(Collection<OutputDataColumn> outputDataColumns) {
 		this.outputDataColumns = outputDataColumns;
 	}
 

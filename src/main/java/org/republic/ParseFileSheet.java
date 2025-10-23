@@ -16,7 +16,6 @@ import java.io.OutputStreamWriter;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.xml.transform.Transformer;
@@ -48,14 +47,14 @@ public class ParseFileSheet {
 	//private OutputDataColumn outputDataCol;
 
 	// New Row OutputDataColumns
-	private Collection newRowOutputDataColumns = new LinkedList();
+	private Collection<OutputDataColumn> newRowOutputDataColumns = new LinkedList<>();
 
 	// These hold the current parse sheet being created
-	private Collection parseSheetColumnNames = new LinkedList();
-	private Collection parseSheetOutputDataRows = new LinkedList();
+	private Collection<String> parseSheetColumnNames = new LinkedList<>();
+	private Collection<OutputDataRow> parseSheetOutputDataRows = new LinkedList<>();
 
 	// List of all parsed Output Data Beans so far..
-	private Collection parsedOutputDataBeans = new LinkedList();
+	private Collection<OutputDataBean> parsedOutputDataBeans = new LinkedList<>();
 
 	private int multiRowLine = -1;
 
@@ -74,8 +73,8 @@ public class ParseFileSheet {
 			// Initialise for processing.
 			allDataMode = false;
 
-			setParseSheetOutputDataRows(new LinkedList());
-			setParseSheetColumnNames(new LinkedList());
+			setParseSheetOutputDataRows(new LinkedList<OutputDataRow>());
+			setParseSheetColumnNames(new LinkedList<String>());
 
 			//setParseSheet(thisParseSheet);
 
@@ -210,7 +209,7 @@ public class ParseFileSheet {
 	public boolean checkReportLine(boolean multiRowMode, ParseSheet parseSheet, String reportLine,
 			int reportPagePos, BufferedReader in) {
 
-		Iterator iter = parseSheet.getParseRules().iterator();
+		Iterator<ParseRule> iter = parseSheet.getParseRules().iterator();
 		while (iter.hasNext()) {
 			ParseRule parseRule = (ParseRule) iter.next();
 
@@ -456,7 +455,7 @@ public class ParseFileSheet {
 	public void writeRow() {
 		OutputDataRow odr = new OutputDataRow();
 		odr.setOutputDataColumns(this.getNewRowOutputDataColumns());
-		Collection workColl = new LinkedList();
+		Collection<OutputDataRow> workColl = new LinkedList<>();
 		workColl = getParseSheetOutputDataRows();
 		workColl.add(odr);
 		this.setParseSheetOutputDataRows(workColl);
@@ -468,7 +467,7 @@ public class ParseFileSheet {
 	 * Start New Row
 	 */
 	public void startNewRow() {
-		this.setNewRowOutputDataColumns(new LinkedList());
+		this.setNewRowOutputDataColumns(new LinkedList<OutputDataColumn>());
 		// outputDataColumns = new LinkedList();
 	}
 	/*
@@ -478,7 +477,7 @@ public class ParseFileSheet {
 		this.setNewRowOutputDataColumns(null);
 	}
 	public void addColumnToRow(OutputDataColumn outputDataCol) {
-		Collection workColl = new LinkedList();
+		Collection<OutputDataColumn> workColl = new LinkedList<>();
 		workColl = getNewRowOutputDataColumns();
 		workColl.add(outputDataCol);
 		this.setNewRowOutputDataColumns(workColl);
@@ -567,7 +566,7 @@ public class ParseFileSheet {
 	 * the output column names we desire.
 	 */
 	public void setColumnNames(ParseSheet parseSheet, OutputDataBean odb) {
-		Iterator iter = parseSheet.getParseRules().iterator();
+		Iterator<ParseRule> iter = parseSheet.getParseRules().iterator();
 		while (iter.hasNext()) {
 			ParseRule parseRule = (ParseRule) iter.next();
 			logger.fine("Column Names, "+ parseRule.getParseType()
@@ -583,7 +582,7 @@ public class ParseFileSheet {
 					|| (parseRule.getParseType()
 							.equalsIgnoreCase(CommonNames.SELECTALLDATA))
 							) {
-				Collection workColl = new LinkedList();
+				Collection<String> workColl = new LinkedList<>();
 				workColl = getParseSheetColumnNames();
 				workColl.add(parseRule.getOutputFieldName());
 				this.setParseSheetColumnNames(workColl);
@@ -682,7 +681,7 @@ public class ParseFileSheet {
 					+ multiRowReportLine[lineCtr]);
 		}
 
-		Iterator iter = parseSheet.getParseRules().iterator();
+		Iterator<ParseRule> iter = parseSheet.getParseRules().iterator();
 		while (iter.hasNext()) {
 			ParseRule parseRule = (ParseRule) iter.next();
 			if (parseRule.getParseType().equalsIgnoreCase(
@@ -750,7 +749,7 @@ public class ParseFileSheet {
 	/**
 	 * @return Returns the parseSheetColumnNames.
 	 */
-	public Collection getParseSheetColumnNames() {
+	public Collection<String> getParseSheetColumnNames() {
 		return parseSheetColumnNames;
 	}
 
@@ -758,14 +757,14 @@ public class ParseFileSheet {
 	 * @param parseSheetColumnNames
 	 *            The parseSheetColumnNames to set.
 	 */
-	public void setParseSheetColumnNames(Collection parseSheetColumnNames) {
+	public void setParseSheetColumnNames(Collection<String> parseSheetColumnNames) {
 		this.parseSheetColumnNames = parseSheetColumnNames;
 	}
 
 	/**
 	 * @return Returns the sheetOutputDataColumns.
 	 */
-	public Collection getNewRowOutputDataColumns() {
+	public Collection<OutputDataColumn> getNewRowOutputDataColumns() {
 		return newRowOutputDataColumns;
 	}
 
@@ -773,14 +772,14 @@ public class ParseFileSheet {
 	 * @param sheetOutputDataColumns
 	 *            The sheetOutputDataColumns to set.
 	 */
-	public void setNewRowOutputDataColumns(Collection newRowOutputDataColumns) {
+	public void setNewRowOutputDataColumns(Collection<OutputDataColumn> newRowOutputDataColumns) {
 		this.newRowOutputDataColumns = newRowOutputDataColumns;
 	}
 
 	/**
 	 * @return Returns the parseSheetOutputDataRows.
 	 */
-	public Collection getParseSheetOutputDataRows() {
+	public Collection<OutputDataRow> getParseSheetOutputDataRows() {
 		return parseSheetOutputDataRows;
 	}
 
@@ -788,14 +787,14 @@ public class ParseFileSheet {
 	 * @param parseSheetOutputDataRows
 	 *            The parseSheetOutputDataRows to set.
 	 */
-	public void setParseSheetOutputDataRows(Collection parseSheetOutputDataRows) {
+	public void setParseSheetOutputDataRows(Collection<OutputDataRow> parseSheetOutputDataRows) {
 		this.parseSheetOutputDataRows = parseSheetOutputDataRows;
 	}
 
 	/**
 	 * @return Returns the outputDataBeans.
 	 */
-	public Collection getParsedOutputDataBeans() {
+	public Collection<OutputDataBean> getParsedOutputDataBeans() {
 		return parsedOutputDataBeans;
 	}
 
@@ -803,11 +802,11 @@ public class ParseFileSheet {
 	 * @param outputDataBeans
 	 *            The outputDataBeans to set.
 	 */
-	public void setOutputDataBeans(Collection outputDataBeans) {
+	public void setOutputDataBeans(Collection<OutputDataBean> outputDataBeans) {
 		this.parsedOutputDataBeans = outputDataBeans;
 	}
 
-	public boolean addOutputDataBean(Object arg0) {
+	public boolean addOutputDataBean(OutputDataBean arg0) {
 		return parsedOutputDataBeans.add(arg0);
 	}
 }
