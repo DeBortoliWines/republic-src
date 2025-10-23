@@ -6,22 +6,18 @@
  */
 package org.republic;
 
+import java.io.StringReader;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
-import java.io.StringReader;
 
 public class ResolveOfficeDTD implements EntityResolver {
-    public InputSource resolveEntity (String publicId, String sysId)
-    {
-        if (sysId.toLowerCase().endsWith(".dtd"))
-        {
-            StringReader stringInput =
-                new StringReader(" ");
-            return new InputSource(stringInput);
-        }
-        else
-        {
-            return null;    // default behavior
-        }
+  public InputSource resolveEntity(String publicId, String sysId) {
+    if (sysId.toLowerCase().endsWith(".dtd")) {
+      StringReader stringInput = new StringReader(" ");
+      return new InputSource(stringInput);
+    } else {
+      return null; // default behavior
     }
+  }
 }
+

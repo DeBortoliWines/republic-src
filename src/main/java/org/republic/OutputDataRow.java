@@ -10,26 +10,24 @@ import java.util.Collection;
 
 /**
  * @author sfg
- *
- * To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Generation - Code and Comments
+ *     <p>To change the template for this generated type comment go to Window - Preferences - Java -
+ *     Code Generation - Code and Comments
  */
 public class OutputDataRow {
-	
-	public Collection<OutputDataColumn> outputDataColumns;
-		
-	/**
-	 * @return Returns the outputDataColumn.
-	 */
-	public Collection<OutputDataColumn> getOutputDataColumns() {
-		return outputDataColumns;
-	}
 
-	/**
-	 * @param outputDataColumn The outputDataColumn to set.
-	 */
-	public void setOutputDataColumns(Collection<OutputDataColumn> outputDataColumns) {
-		this.outputDataColumns = outputDataColumns;
-	}
+  public Collection<OutputDataColumn> outputDataColumns;
 
+  /**
+   * @return Returns the outputDataColumn.
+   */
+  public Collection<OutputDataColumn> getOutputDataColumns() {
+    return outputDataColumns;
+  }
+
+  /**
+   * @param outputDataColumn The outputDataColumn to set.
+   */
+  public void setOutputDataColumns(Collection<OutputDataColumn> outputDataColumns) {
+    this.outputDataColumns = outputDataColumns;
+  }
 }
