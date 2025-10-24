@@ -78,7 +78,6 @@
         <directory>src/main/java</directory>
         <includes>
           <include>**/ParseParametersMapping.xml</include>
-          <include>**/template.ods</include>
         </includes>
       </resource>
 	</resources>

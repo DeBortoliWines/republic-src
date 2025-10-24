@@ -55,40 +55,8 @@ public class Start {
 						"Parm3 Location of output file");
 			}
 			// We want to end up with the content.xml in this  file: outputFileString
-			ParseFile parseFile = new ParseFile(); 
 			//parseFile.transformToContent(args[1],args[2],args[3]);
 			System.out.println("Created output :"+args[3]);
-		}
-		else if (args[0].equalsIgnoreCase("--extractData"))
-		{
-			if (args.length != 4)
-			{
-				System.err.println(
-						"Option --extract must have 3 additional parameters:\n"+
-						"Parm1 .sxc file\n "+
-						"Parm2 Location of temp dir.\n"+
-						"Parm3 Location of output data xml file");
-			}
-//			 We want to end up with the content.xml in this  file: outputFileString
-
-			OoCalcTool oocalcTool = new OoCalcTool(); 
-			oocalcTool.extractContentToData(args[1],args[2],args[3]);
-			System.out.println("Created data xml:"+args[3]);
-		}		
-		else if (args[0].equalsIgnoreCase("--makeOOCalc"))
-		{
-			if (args.length != 4)
-			{
-				System.err.println(
-						"Option --makeOOCalc must have 3 additional parameters:\n"+
-						"Parm1 Dir holding template\n "+
-						"Parm2 Location of content.xml\n"+
-						"Parm3 Location of created file");
-			}
-			// We want to end up with the content.xml in this  file: outputFileString
-			OoCalcTool oocalcTool = new OoCalcTool(); 
-			oocalcTool.createSxcFile(args[1],args[2],args[3]);
-			System.out.println("Created output spreadsheet:"+args[3]);
 		}
 		else if (args.length == 4)
 		{	
