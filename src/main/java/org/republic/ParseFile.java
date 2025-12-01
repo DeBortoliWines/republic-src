@@ -10,7 +10,9 @@ import com.github.jferard.fastods.OdsDocument;
 import com.github.jferard.fastods.OdsFactory;
 import com.github.jferard.fastods.Table;
 import com.github.jferard.fastods.TableCell;
+import com.github.jferard.fastods.Text;
 import com.github.jferard.fastods.style.TableCellStyle;
+import com.github.jferard.fastods.util.XMLUtil;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -115,7 +117,9 @@ public class ParseFile {
             TableCellStyle.builder("header-bold-style").fontWeightBold().build();
         for (int i = 0; i < odb.getOutputDataColumnNames().size(); i++) {
           final TableCell cell = table.getRow(0).getOrCreateCell(i);
-          cell.setStringValue(headers[i]);
+          final String headerString = XMLUtil.create().escapeXMLContent(headers[i]);
+          final Text text = Text.builder().parContent(headerString).build();
+          cell.setText(text);
           cell.setStyle(boldTextStyle);
         }
 
@@ -133,7 +137,7 @@ public class ParseFile {
             final TableCell cell = table.getRow(rowNum).getOrCreateCell(colNum++);
 
             if (dataValue == null || dataValue.trim().isEmpty()) {
-              cell.setStringValue("");
+              cell.setVoidValue();
               continue;
             }
             switch (dataType.toLowerCase()) {
@@ -143,7 +147,11 @@ public class ParseFile {
                 try {
                   cell.setFloatValue(Float.parseFloat(strValue));
                 } catch (NumberFormatException e) {
-                  cell.setStringValue(strValue);
+                  final Text text =
+                      Text.builder()
+                          .parContent(XMLUtil.create().escapeXMLContent(dataValue))
+                          .build();
+                  cell.setText(text);
                 }
                 break;
               case "percentage":
@@ -161,7 +169,9 @@ public class ParseFile {
                 break;
               case "string":
               default:
-                cell.setStringValue(dataValue);
+                final Text text =
+                    Text.builder().parContent(XMLUtil.create().escapeXMLContent(dataValue)).build();
+                cell.setText(text);
                 break;
             }
           }
