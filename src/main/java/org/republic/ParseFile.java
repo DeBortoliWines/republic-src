@@ -106,8 +106,23 @@ public class ParseFile {
       // For each data sheet
       while (iter.hasNext()) {
         OutputDataBean odb = (OutputDataBean) iter.next();
-        final Table table = document.addTable(odb.getDataBaseName());
-        logger.info("Populating sheet: " + odb.getDataBaseName());
+
+        String baseName = odb.getDataBaseName();
+        String currentName = baseName;
+        Table table = document.addTable(odb.getDataBaseName());
+        int attempt = 2;
+
+        // If addTable returns null (duplicate), try _2, _3, etc.
+        while (table == null) {
+          currentName = baseName + "_" + attempt++;
+          table = document.addTable(currentName);
+
+          // Safety break to prevent infinite loops
+          if (attempt > 100) {
+             throw new RuntimeException("Unable to create unique sheet name for: " + baseName);
+          }
+        }
+        logger.info("Populating sheet: " + table.getName());
 
         // First we add headers
         String[] headers =
