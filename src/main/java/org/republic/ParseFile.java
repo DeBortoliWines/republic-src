@@ -135,6 +135,7 @@ public class ParseFile {
           final String headerString = XMLUtil.create().escapeXMLContent(headers[i]);
           final Text text = Text.builder().parContent(headerString).build();
           cell.setText(text);
+          cell.setStringValue(headers[i]);
           cell.setStyle(boldTextStyle);
         }
 
@@ -167,6 +168,7 @@ public class ParseFile {
                           .parContent(XMLUtil.create().escapeXMLContent(dataValue))
                           .build();
                   cell.setText(text);
+                  cell.setStringValue(dataValue);
                 }
                 break;
               case "percentage":
@@ -187,6 +189,7 @@ public class ParseFile {
                 final Text text =
                     Text.builder().parContent(XMLUtil.create().escapeXMLContent(dataValue)).build();
                 cell.setText(text);
+                cell.setStringValue(dataValue);
                 break;
             }
           }
